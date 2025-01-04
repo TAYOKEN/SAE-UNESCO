@@ -7,29 +7,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesheet.css">
   <title>Accueil</title>
 </head>
 <body>
-  <header>
+ <header>
     <div class="header-images">
-      <img src="Images/logo.png" alt="logo">
+      <img src="Images/logo.png" alt="Logo">
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li>
-          <a href="projet1.html">Projets</a>
-          <ul class="sous-menu">
-            <li><a href="projet1.html">Projet de cours</a></li>
-            <li><a href="projet2.html">Projet personnels</a></li>
+        </li>
+        <li><a href="mention_legales.html">Mention légales</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">Activités <span class="arrow">&#9660;</span></a>
+          <ul class="sub-menu">
+            <li><a href="#">Musées à Paris</a></li>
+            <li><a href="#">Promenades sur la Seine</a></li>
+            <li><a href="#">Événements à Paris</a></li>
+            <li><a href="#">Balades à vélo</a></li>
           </ul>
         </li>
-        <li><a href="mention_legales.html">Mention legales</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">Contenus <span class="arrow">&#9660;</span></a>
+          <ul class="sub-menu">
+            <li><a href="#">Histoire de Paris</a></li>
+            <li><a href="#">Les quais de la Seine</a></li>
+            <li><a href="#">Culture parisienne</a></li>
+            <li><a href="#">Lieux incontournables</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Histoires <span class="arrow">&#9660;</span></a>
+          <ul class="sub-menu">
+            <li><a href="#">Personnalités célèbres</a></li>
+            <li><a href="#">Événements historiques</a></li>
+            <li><a href="#">Légendes de Paris</a></li>
+            <li><a href="#">Lieux historiques</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
-    <input type="text" placeholder="Recherche..." class="simple-input">
+    <div class="search-bar">
+      <input type="text" placeholder="Recherche..." class="simple-input">
+    </div>
   </header>
   
 
@@ -39,9 +62,112 @@
     <img src="Images/3.jpg" alt="logo">
   </section>
 
+  <section>
+    <div class="description-container">
+      <img src="Images/1.jpg" alt="Description" style="float: right; margin-left: 25px;">
+      <h1>Titre</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam eget  augue magna. Phasellus vel leo ipsum. Donec bibendum feugiat nunc in  consectetur. In hac habitasse platea dictumst.<br> Etiam arcu urna, ultrices at felis nec, tristique tempor elit. Nulla sit amet mi tristique felis  elementum mollis. Proin sapien nisl, egestas a fermentum eget,<br> congue  quis nibh. Praesent convallis varius purus. Ut finibus, arcu at semper  volutpat, elit mi pellentesque elit, eget tincidunt orci risus id velit. <br>Aenean nec tortor vulputate, fringilla odio et, posuere orci.<br>
+      Vivamus id nibh laoreet mauris eleifend dignissim. Nullam consectetur  tellus id dui maximus luctus.<br> Ut semper, sem nec tempus iaculis, elit<br>  urna iaculis urna, eget tempus enim turpis non velit.<br> Vestibulum ante  ipsum primis in faucibus orci luctus<br> et ultrices posuere cubilia curae;  Sed in erat <br></p>
+    </div>
+  </section>
+
+  <section>
+
+    <div class="competence-container">
+      <div class="competence">
+        <a href="index.html">
+        <img src="Images/1.jpg" alt="Compétence 1">
+        </a>
+        <p>Texte pour compétence 1</p>
+      </div>
+      <div class="competence">
+        <img src="Images/2.jpg" alt="Compétence 2">
+        <p>Texte pour compétence 2</p>
+      </div>
+      <div class="competence">
+        <img src="Images/3.jpg" alt="Compétence 3">
+        <p>Texte pour compétence 3</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <section>
+    <div class="description-container">
+      <img src="Images/1.jpg" alt="Description" style="float: right; margin-left: 10px;">
+      <h1>Titre</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam eget  augue magna. Phasellus vel leo ipsum. Donec bibendum feugiat nunc in  consectetur. In hac habitasse platea dictumst.<br> Etiam arcu urna, ultrices at felis nec, tristique tempor elit. Nulla sit amet mi tristique felis  elementum mollis. Proin sapien nisl, egestas a fermentum eget,<br> congue  quis nibh. Praesent convallis varius purus. Ut finibus, arcu at semper  volutpat, elit mi pellentesque elit, eget tincidunt orci risus id velit. <br>Aenean nec tortor vulputate, fringilla odio et, posuere orci.<br>
+      Vivamus id nibh laoreet mauris eleifend dignissim. Nullam consectetur  tellus id dui maximus luctus.<br> Ut semper, sem nec tempus iaculis, elit<br>  urna iaculis urna, eget tempus enim turpis non velit.<br> Vestibulum ante  ipsum primis in faucibus orci luctus<br> et ultrices posuere cubilia curae;  Sed in erat <br></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="description-container">
+      <img src="Images/1.jpg" alt="Description" style="float: right; margin-left: 10px;">
+      <h1>Titre</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam eget  augue magna. Phasellus vel leo ipsum. Donec bibendum feugiat nunc in  consectetur. In hac habitasse platea dictumst.<br> Etiam arcu urna, ultrices at felis nec, tristique tempor elit. Nulla sit amet mi tristique felis  elementum mollis. Proin sapien nisl, egestas a fermentum eget,<br> congue  quis nibh. Praesent convallis varius purus. Ut finibus, arcu at semper  volutpat, elit mi pellentesque elit, eget tincidunt orci risus id velit. <br>Aenean nec tortor vulputate, fringilla odio et, posuere orci.<br>
+      Vivamus id nibh laoreet mauris eleifend dignissim. Nullam consectetur  tellus id dui maximus luctus.<br> Ut semper, sem nec tempus iaculis, elit<br>  urna iaculis urna, eget tempus enim turpis non velit.<br> Vestibulum ante  ipsum primis in faucibus orci luctus<br> et ultrices posuere cubilia curae;  Sed in erat <br></p>
+    </div>
+  </section>
+
+  <section>
+
+    <div class="competence-container">
+      <div class="competence">
+        <img src="Images/1.jpg" alt="Compétence 1">
+        <p>Texte pour compétence 1</p>
+      </div>
+      <div class="competence">
+        <img src="Images/2.jpg" alt="Compétence 2">
+        <p>Texte pour compétence 2</p>
+      </div>
+      <div class="competence">
+        <img src="Images/3.jpg" alt="Compétence 3">
+        <p>Texte pour compétence 3</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <section>
+    <div class="description-container">
+      <img src="Images/1.jpg" alt="Description" style="float: right; margin-left: 10px;">
+      <h1>Titre</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam eget  augue magna. Phasellus vel leo ipsum. Donec bibendum feugiat nunc in  consectetur. In hac habitasse platea dictumst.<br> Etiam arcu urna, ultrices at felis nec, tristique tempor elit. Nulla sit amet mi tristique felis  elementum mollis. Proin sapien nisl, egestas a fermentum eget,<br> congue  quis nibh. Praesent convallis varius purus. Ut finibus, arcu at semper  volutpat, elit mi pellentesque elit, eget tincidunt orci risus id velit. <br>Aenean nec tortor vulputate, fringilla odio et, posuere orci.<br>
+      Vivamus id nibh laoreet mauris eleifend dignissim. Nullam consectetur  tellus id dui maximus luctus.<br> Ut semper, sem nec tempus iaculis, elit<br>  urna iaculis urna, eget tempus enim turpis non velit.<br> Vestibulum ante  ipsum primis in faucibus orci luctus<br> et ultrices posuere cubilia curae;  Sed in erat <br></p>
+    </div>
+  </section>
+  <section>
+    <div class="description-container">
+      <img src="Images/1.jpg" alt="Description" style="float: right; margin-left: 10px;">
+      <h1>Titre</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam eget  augue magna. Phasellus vel leo ipsum. Donec bibendum feugiat nunc in  consectetur. In hac habitasse platea dictumst.<br> Etiam arcu urna, ultrices at felis nec, tristique tempor elit. Nulla sit amet mi tristique felis  elementum mollis. Proin sapien nisl, egestas a fermentum eget,<br> congue  quis nibh. Praesent convallis varius purus. Ut finibus, arcu at semper  volutpat, elit mi pellentesque elit, eget tincidunt orci risus id velit. <br>Aenean nec tortor vulputate, fringilla odio et, posuere orci.<br>
+      Vivamus id nibh laoreet mauris eleifend dignissim. Nullam consectetur  tellus id dui maximus luctus.<br> Ut semper, sem nec tempus iaculis, elit<br>  urna iaculis urna, eget tempus enim turpis non velit.<br> Vestibulum ante  ipsum primis in faucibus orci luctus<br> et ultrices posuere cubilia curae;  Sed in erat <br></p>
+    </div>
+  </section>
+
+  <section>
+
+    <div class="competence-container">
+      <div class="competence">
+        <img src="Images/1.jpg" alt="Compétence 1">
+        <p>Texte pour compétence 1</p>
+      </div>
+      <div class="competence">
+        <img src="Images/2.jpg" alt="Compétence 2">
+        <p>Texte pour compétence 2</p>
+      </div>
+      <div class="competence">
+        <img src="Images/3.jpg" alt="Compétence 3">
+        <p>Texte pour compétence 3</p>
+      </div>
+    </div>
+    
+  </section>
 
   <footer>
-    <p>&copy; Yanis BOUKAYOUH</p>
+    <p>&copy; Groupe Unesco</p>
   </footer>
+  
 </body>
 </html>
