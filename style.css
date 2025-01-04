@@ -166,16 +166,29 @@ nav ul li:hover .sub-menu {
 }
 
 .description-container {
-  background-color:  #505050;
+  background-color: #505050;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  display: inline-block;
+  max-width: 800px;
+  margin: 20px auto;
   text-align: left;
-  opacity: 0;
-  transition: transform 0.5s ease-in-out, filter 0.5s ease;
-  animation: fadeIn 1s ease-out forwards;
 }
+
+.description-image {
+  display: block; /* Pour s'assurer qu'elle ne flotte pas */
+  margin: 0 auto 20px auto; /* Centrée et avec un espace en bas */
+  max-width: 100%; /* Pour éviter les débordements */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.description-image:hover {
+  transform: scale(1.05); /* Effet zoom au survol */
+  filter: brightness(1.1);
+}
+
 .description-container:hover {
   transform: scale(1.01);
 }
@@ -192,7 +205,7 @@ section {
 }
 
 footer {
-  background-color: #ea5c0d;
+  background-color: #505050;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -208,5 +221,57 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  header {
+    align-items: center;
+  }
+
+  .header-images img {
+    height: 45px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .description-container h1 {
+    font-size: 30px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1200px) {
+  .main-content {
+    padding: 60px;
+    max-width: 1200px;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .description-container h1 {
+    font-size: 48px;
   }
 }
