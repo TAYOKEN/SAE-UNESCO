@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
@@ -16,6 +18,13 @@ body {
   align-items: center;
   padding: 20px;
 }
+
+    h1, h2, h3 {
+      font-family: "Dyno Bold", sans-serif;
+    }
+    p, li, input, a {
+      font-family: "Cicle Semi", sans-serif;
+    }
 
 .main-content {
   padding: 50px;
