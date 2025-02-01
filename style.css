@@ -270,6 +270,9 @@ footer {
     margin: 10px 0; /* Espacement vertical */
     width: 90%; /* Largeur ajustée */
   }
+  .competence-container {
+    display: none;
+  }
   
 
   footer {
