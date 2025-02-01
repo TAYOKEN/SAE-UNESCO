@@ -233,7 +233,6 @@ footer {
   }
 }
 
-/* Ajoutez cette partie à votre CSS */
 @media (max-width: 768px) {
   body {
     padding: 10px;
@@ -241,56 +240,46 @@ footer {
 
   header {
     flex-direction: column;
-    text-align: center;
-  }
-
-  header .header-images {
-    justify-content: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
     gap: 10px;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .menu-toggle:hover {
+    background-color: #1565c0;
   }
 
   .main-content {
     flex-direction: column;
-    padding: 20px;
-  }
-
-  .main-content img {
-    width: 90%; /* Pour éviter que l'image déborde */
-    max-width: 300px; /* Limitation de taille maximale */
-  }
-
-  .competence-container {
-    flex-direction: column;
-    gap: 10px;
+    justify-content: center;
     align-items: center;
-  }
-
-  .competence-container img {
-    width: 90%; /* Ajustement automatique de la taille */
-    max-width: 300px;
-  }
-
-  .description-container {
-    padding: 15px;
     width: 100%;
   }
 
+  .photodep-container,
+  .description-container,
+  .Projet-container {
+    flex: 0 0 auto;
+    margin: 10px 0; /* Espacement vertical */
+    width: 90%; /* Largeur ajustée */
+  }
+  
+
   footer {
+    text-align: center;
     padding: 15px;
-    font-size: 14px;
   }
 
-  nav ul li {
-    margin: 5px 0;
-  }
-
-  nav ul li a {
-    padding: 10px;
-    font-size: 14px;
+  /* Masquer les sous-menus en mobile */
+  nav ul li .sous-menu {
+    display: none !important;
+    
   }
 }
