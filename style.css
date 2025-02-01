@@ -246,14 +246,14 @@ footer {
   .menu-toggle {
     display: inline-block;
     cursor: pointer;
-    background-color: #1e88e5;
+    background-color: #ea5c0d;
     color: white;
     padding: 10px;
     border-radius: 5px;
   }
 
   .menu-toggle:hover {
-    background-color: #1565c0;
+    background-color: #b94503;
   }
 
   .main-content {
