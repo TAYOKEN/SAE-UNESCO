@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire - L'Architecture de Paris</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #333333;
+        }
+
+        /* Header */
+        .header {
+            background: #EA5C0D;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            padding: 10px 40px 10px 15px;
+            border: none;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 14px;
+            outline: none;
+            transition: width 0.3s ease;
+        }
+
+        .search-box:focus {
+            width: 300px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #EA5C0D;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(234,92,13,0.3), rgba(247,175,62,0.3));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: linear-gradient(135deg, #505050, #555555);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .intro-section h2 {
+            color: #F7AF3E;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .intro-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #EA5C0D, #F7AF3E);
+            border-radius: 2px;
+        }
+
+        .intro-section p {
+            color: #ecf0f1;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Timeline Container */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(180deg, #EA5C0D, #F7AF3E);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+            animation: growLine 2s ease-out;
+        }
+
+        @keyframes growLine {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            animation: fadeInSlide 0.8s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(5) { animation-delay: 1.0s; }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background: #F7AF3E;
+            border: 4px solid #EA5C0D;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::after {
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(247,175,62,0.6);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .content-box {
+            padding: 30px;
+            background: linear-gradient(135deg, #505050, #555555);
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border-left: 4px solid #F7AF3E;
+        }
+
+        .content-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(247,175,62,0.2);
+        }
+
+        .period {
+            color: #F7AF3E;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .period-title {
+            color: #EA5C0D;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #ecf0f1;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .highlights {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights li {
+            color: #ecf0f1;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #F7AF3E;
+            font-weight: bold;
+        }
+
+        /* Document Section */
+        .document-section {
+            background: linear-gradient(135deg, #505050, #555555);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .document-section h3 {
+            color: #F7AF3E;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .document-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .document-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #505050;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: #F7AF3E;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #EA5C0D;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: #EA5C0D;
+                width: 100%;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .search-container {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+
+            .main-container {
+                padding: 20px;
+            }
+
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .intro-section, .content-box {
+                padding: 20px;
+            }
+
+            .intro-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .intro-section, .content-box {
+                padding: 15px;
+            }
+
+            .period {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.php" class="logo">
+                <img src="Images/logo.png" alt="MCN Logo" onerror="this.src='https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80'">
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="glossaire.html">GLOSSAIRE</a></li>
+                    <li><a href="itineraires.html">ITINÉRAIRES</a></li>
+                    <li><a href="histoire.html" class="active">HISTOIRE</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Rechercher..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>L'Architecture de Paris</h1>
+        <p>Un voyage à travers les styles et les siècles</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Introduction -->
+        <section class="intro-section">
+            <h2>Introduction</h2>
+            <p>Paris est un véritable musée à ciel ouvert. À chaque coin de rue, l'architecture raconte l'histoire de la ville, ses révolutions artistiques, sociales et politiques. Des vestiges médiévaux aux lignes audacieuses de l'architecture contemporaine, la capitale française est une mosaïque de styles.</p>
+        </section>
+
+        <!-- Timeline -->
+        <div class="timeline-container">
+            <div class="timeline-item left fade-in-on-scroll">
+                <div class="content-box">
+                    <div class="period">Moyen Âge (IV° - XV° siècles)</div>
+                    <div class="period-title">Les Fondations de Paris</div>
+                    <div class="description">
+                        L'architecture médiévale de Paris se caractérise par ses églises gothiques et ses premières fortifications.
+                    </div>
+                    <ul class="highlights">
+                        <li>IV° - X° siècle : Basilique des Saints-Andrés, abbaye Saint-Germain-des-Prés</li>
+                        <li>1163 : Début de Notre-Dame de Paris (gothique)</li>
+                        <li>Philippe Auguste : Enceinte et château du Louvre</li>
+                        <li>Charles V : Enceinte avec bastille, modernisation du palais de la Cité</li>
+                        <li>XV° siècle : Hôtel de Cluny, église Saint-Merri (gothique flamboyant)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item right fade-in-on-scroll">
+                <div class="content-box">
+                    <div class="period">Époque Moderne (XVI° - XVIII° siècle)</div>
+                    <div class="period-title">Renaissance et Classicisme</div>
+                    <div class="description">
+                        La Renaissance apporte de nouveaux codes architecturaux, suivie par l'âge classique français.
+                    </div>
+                    <ul class="highlights">
+                        <li>XVI° siècle : Style classique/baroque - place des Vosges, place Vendôme</li>
+                        <li>XVII° siècle : Néoclassicisme - Panthéon</li>
+                        <li>XVIII° siècle : Travaux Haussmanniens - grands boulevards, immeubles en pierre de taille</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item left fade-in-on-scroll">
+                <div class="content-box">
+                    <div class="period">Antiquité (I° - III° siècle)</div>
+                    <div class="period-title">Lutèce, Paris Antique</div>
+                    <div class="description">
+                        Les vestiges gallo-romains témoignent des origines de la ville.
+                    </div>
+                    <ul class="highlights">
+                        <li>Lutèce (Paris antique) sur l'île de la Cité et rive gauche</li>
+                        <li>Thermes de Cluny (forum romain)</li>
+                        <li>Arènes de Lutèce (amphithéâtre)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item right fade-in-on-scroll">
+                <div class="content-box">
+                    <div class="period">Renaissance et Temps Modernes (XV° - XVIII° siècle)</div>
+                    <div class="period-title">L'Évolution Architecturale</div>
+                    <div class="description">
+                        Introduction de la Renaissance italienne et développement du style français classique.
+                    </div>
+                    <ul class="highlights">
+                        <li>Fontaine des Innocents (Jean Goujon), Louvre (Pierre Lescot)</li>
+                        <li>Hôtels particuliers entre cour et jardin (ex. hôtel Carnavalet)</li>
+                        <li>Églises : Saint-Étienne-du-Mont, Saint-Gervais-Saint-Protais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item left fade-in-on-scroll">
+                <div class="content-box">
+                    <div class="period">XX° - XXI° siècles</div>
+                    <div class="period-title">Modernité et Innovation</div>
+                    <div class="description">
+                        L'architecture contemporaine parisienne entre patrimoine et innovation.
+                    </div>
+                    <ul class="highlights">
+                        <li>XX° siècle : Modernité - Centre Pompidou, tour Montparnasse, La Défense</li>
+                        <li>XXI° siècle : Architecture contemporaine, équilibre entre patrimoine et innovation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Section -->
+        <section class="document-section fade-in-on-scroll">
+            <h3>Document</h3>
+            <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Vue de Paris avec la Seine et l'architecture historique" 
+                 class="document-image">
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 MCN - L'Architecture de Paris</p>
+        <div>
+            <a href="mentions.php">Mentions</a>
+            <a href="contact.php">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            
+            navLinks.classList.toggle('active');
+            mobileBtn.classList.toggle('active');
+        }
+
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // Simple search implementation
+                alert(`Recherche pour: "${searchTerm}"`);
+            }
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (!header.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileBtn.classList.remove('active');
+            }
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in-on-scroll');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initial animation check
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+        });
+
+        // Add hover effects to timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add smooth reveal animation for timeline line
+        function revealTimelineLine() {
+            const timeline = document.querySelector('.timeline-container::after');
+            if (timeline) {
+                timeline.style.animation = 'growLine 2s ease-out';
+            }
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            revealTimelineLine();
+            
+            // Add staggered animation to timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

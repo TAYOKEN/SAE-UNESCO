@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinéraires - Quais de Seine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #333333;
+        }
+
+        /* Header */
+        .header {
+            background: #EA5C0D;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            padding: 10px 40px 10px 15px;
+            border: none;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 14px;
+            outline: none;
+            transition: width 0.3s ease;
+        }
+
+        .search-box:focus {
+            width: 300px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #EA5C0D;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(234,92,13,0.3), rgba(247,175,62,0.3));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            max-width: 800px;
+            margin: 0 20px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Access Info Section */
+        .access-info {
+            background: #505050;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .access-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .access-info h2 {
+            color: #F7AF3E;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .access-info p {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .metro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metro-card {
+            background: linear-gradient(135deg, #5a5a5a, #505050);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #F7AF3E;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .metro-card:nth-child(1) { animation-delay: 0.1s; }
+        .metro-card:nth-child(2) { animation-delay: 0.3s; }
+        .metro-card:nth-child(3) { animation-delay: 0.5s; }
+        .metro-card:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .metro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(247,175,62,0.2);
+        }
+
+        .metro-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .rer-c { background: #F7D000; }
+        .metro-b { background: #0055C8; }
+        .metro-4 { background: #A0006E; }
+        .metro-7 { background: #00A88F; }
+        .metro-10 { background: #8D5A2A; }
+        .metro-5 { background: #FF7E2E; }
+
+        .metro-card h3 {
+            color: #F7AF3E;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .metro-card p {
+            color: #ecf0f1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Routes Section */
+        .routes-section {
+            padding: 60px 20px;
+            background: #333333;
+        }
+
+        .routes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .routes-section h2 {
+            color: #F7AF3E;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .route-card {
+            background: #505050;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .route-card:nth-child(even) {
+            transform: translateX(50px);
+            animation-name: slideInLeft;
+        }
+
+        .route-card:nth-child(2) { animation-delay: 0.2s; }
+        .route-card:nth-child(3) { animation-delay: 0.4s; }
+        .route-card:nth-child(4) { animation-delay: 0.6s; }
+        .route-card:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .route-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(247,175,62,0.2);
+        }
+
+        .route-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+            min-height: 300px;
+        }
+
+        .route-image {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .route-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(234,92,13,0.2), rgba(247,175,62,0.2));
+            transition: opacity 0.3s ease;
+        }
+
+        .route-card:hover .route-image::before {
+            opacity: 0.8;
+        }
+
+        .route-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .route-info h3 {
+            color: #F7AF3E;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .route-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #EA5C0D, #F7AF3E);
+            border-radius: 2px;
+        }
+
+        .route-details {
+            background: rgba(90,90,90,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .route-details h4 {
+            color: #F7AF3E;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .route-details p {
+            color: #ecf0f1;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .route-description {
+            color: #ecf0f1;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            background: #505050;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 0;
+        }
+
+        .footer a {
+            color: #F7AF3E;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #EA5C0D;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: #EA5C0D;
+                width: 100%;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .search-container {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .metro-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .route-content {
+                grid-template-columns: 1fr;
+            }
+
+            .route-image {
+                height: 200px;
+            }
+
+            .route-info {
+                padding: 20px;
+            }
+
+            .route-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .access-info h2 {
+                font-size: 2rem;
+            }
+
+            .routes-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #EA5C0D;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.php" class="logo">
+                <img src="Images/logo.png" alt="Logo MCN" onerror="this.src='https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80'">
+                
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="glossaire.html">GLOSSAIRE</a></li>
+                    <li><a href="itineraires.html" class="active">ITINÉRAIRES</a></li>
+                    <li><a href="histoire.html">HISTOIRE</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Rechercher..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Les parcours pour découvrir les quais de Seine</h1>
+        <p>Retrouvez ici toutes les informations pratiques pour visiter les quais de Seine : accès, horaires, sécurité, services, contacts...</p>
+    </section>
+
+    <!-- Access Information Section -->
+    <section class="access-info">
+        <div class="access-container">
+            <h2>🚇 Accès: RER C, B – Métro 4,7, 5, 10 – Stations Quai de la Rapée, St-Michel..</h2>
+            <p>Les quais de Seine sont facilement accessibles en transports en commun :</p>
+            
+            <div class="metro-grid">
+                <div class="metro-card">
+                    <div class="metro-icon rer-c">C</div>
+                    <h3>RER C</h3>
+                    <p>Arrêt Saint-Michel – Notre-Dame (accès direct aux quais)</p>
+                </div>
+                
+                <div class="metro-card">
+                    <div class="metro-icon metro-b">B</div>
+                    <h3>RER B</h3>
+                    <p>Station Saint-Michel Notre-Dame, accès rapide aux berges</p>
+                </div>
+                
+                <div class="metro-card">
+                    <div class="metro-icon metro-4">4</div>
+                    <h3>Métro 4</h3>
+                    <p>Stations multiples le long de la Seine pour un accès optimal</p>
+                </div>
+                
+                <div class="metro-card">
+                    <div class="metro-icon metro-7">7</div>
+                    <h3>Métro 7</h3>
+                    <p>Arrêt Pont Marie pour découvrir l'île Saint-Louis</p>
+                </div>
+                
+                <div class="metro-card">
+                    <div class="metro-icon metro-10">10</div>
+                    <h3>Métro 10</h3>
+                    <p>Cluny La Sorbonne, proche du Quartier Latin</p>
+                </div>
+                
+                <div class="metro-card">
+                    <div class="metro-icon metro-5">5</div>
+                    <h3>Métro 5</h3>
+                    <p>Quai de la Rapée, sortie "Port de l'Arsenal"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Section -->
+    <section class="routes-section">
+        <div class="routes-container">
+            <h2>Itinéraires Découverte</h2>
+            
+            <div class="route-card">
+                <div class="route-content">
+                    <div class="route-image" style="background-image: url('https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="route-info">
+                        <h3>Circuit Classique : du Louvre à la Tour Eiffel</h3>
+                        <div class="route-details">
+                            <h4>Infos pratiques:</h4>
+                            <p>Distance : ~5 km</p>
+                            <p>Départ : Pont des Arts (Louvre)</p>
+                            <p>Arrivée : Pont d'Iéna (Tour Eiffel)</p>
+                        </div>
+                        <p class="route-description">
+                            Lance-toi depuis le Pont des Arts avec sa vue emblématique sur l'Institut de France. 
+                            En suivant les quais, tu passeras sous le Pont Neuf, devant la statue d'Henri IV puis longeras les 
+                            péniches jusqu'au Port de Solférino. Traverse ensuite le Pont de la Concorde, découvre les terrasses 
+                            du Port des Champs-Élysées, et termine ta balade en beauté au pied de la Tour Eiffel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <div class="route-content">
+                    <div class="route-image" style="background-image: url('https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="route-info">
+                        <h3>Circuit Nature : de Bercy à Notre-Dame</h3>
+                        <div class="route-details">
+                            <h4>Infos pratiques:</h4>
+                            <p>Distance : ~6 km</p>
+                            <p>Départ : Parc de Bercy</p>
+                            <p>Arrivée : Parvis de Notre-Dame</p>
+                        </div>
+                        <p class="route-description">
+                            Parcours sauvage et verdoyant, ce trajet débute au parc de Bercy, puis descend le long du Port de 
+                            Bercy. En longeant les quais, tu trouveras de beaux espaces verts ainsi que des calmes sur les quais
+                            le port Saint-Bernard et ses petits jardins cachés. Avec un détour festif à Rosa Bonheur sur Seine, 
+                            tu finis face à Notre-Dame, avec une vue imprenable sur l'Île Saint-Louis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <div class="route-content">
+                    <div class="route-image" style="background-image: url('https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="route-info">
+                        <h3>Circuit Nocturne : Rive Gauche & Île de la Cité</h3>
+                        <div class="route-details">
+                            <h4>Infos pratiques:</h4>
+                            <p>Distance : ~4 km</p>
+                            <p>Départ : Pont Alexandre III</p>
+                            <p>Arrivée : Place Dauphine</p>
+                        </div>
+                        <p class="route-description">
+                            Parfait en fin de journée, ce parcours commence sur le majestueux Pont Alexandre III. Il t'emmène 
+                            vers les quais paisibles des Invalides, sous la flamme de la liberté au Pont de l'Alma, avant de 
+                            traverser la Seine au Pont Neuf. Tu arrives enfin à la charmante Place Dauphine, idéale pour une 
+                            pause calme au cœur de la ville illuminée.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <div class="route-content">
+                    <div class="route-image" style="background-image: url('https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="route-info">
+                        <h3>Circuit Street Art et Culture : Tolbiac > Gare</h3>
+                        <div class="route-details">
+                            <h4>Infos pratiques:</h4>
+                            <p>Distance : ~3 km</p>
+                            <p>Départ : Pont de Tolbiac</p>
+                            <p>Arrivée : Passerelle Simone-de-Beauvoir</p>
+                        </div>
+                        <p class="route-description">
+                            Ce circuit d'inspiration commence au Pont de Tolbiac, haut lieu de street art parisien. En descendant 
+                            vers le Port de la Gare, tu exploreras les berges contemporaines du nouveau Paris. Tu termines sur la 
+                            sublime et vélo panoramique sur la Seine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <div class="route-content">
+                    <div class="route-image" style="background-image: url('https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="route-info">
+                        <h3>Circuit "Vieux Paris" : Île Saint-Louis & Île de la Cité</h3>
+                        <div class="route-details">
+                            <h4>Infos pratiques:</h4>
+                            <p>Distance : ~3 km</p>
+                            <p>Départ : Square du Vert-Galant</p>
+                            <p>Arrivée : Port de l'Hôtel</p>
+                        </div>
+                        <p class="route-description">
+                            Immersion totale dans le charme historique de Paris. Commence au Square du Vert Galant pour un 
+                            panorama sublime, traverse l'Histoire dans Saint-Germain l'Auxerrois, remonte vers la rue Saint-Louis-
+                            en-l'Océan et profite du quartier médiéval de l'île Saint-Louis. Entre histoire calme, patrimoine et vielle magnolias, ce parcours te ramène à l'histoire de 
+                            Vieux Paris, longeant Port de l'hôtel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Quais de Seine - Projet UNESCO</p>
+        <div>
+            <a href="mentions.php">Mentions</a>
+            <a href="contact.php">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            
+            navLinks.classList.toggle('active');
+            mobileBtn.classList.toggle('active');
+            
+            // Animate mobile menu button
+            if (mobileBtn.classList.contains('active')) {
+                mobileBtn.querySelector('span:nth-child(1)').style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                mobileBtn.querySelector('span:nth-child(2)').style.opacity = '0';
+                mobileBtn.querySelector('span:nth-child(3)').style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                mobileBtn.querySelector('span:nth-child(1)').style.transform = '';
+                mobileBtn.querySelector('span:nth-child(2)').style.opacity = '1';
+                mobileBtn.querySelector('span:nth-child(3)').style.transform = '';
+            }
+        }
+
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // Show loading animation
+                const searchBtn = document.querySelector('.search-btn');
+                const originalContent = searchBtn.innerHTML;
+                searchBtn.innerHTML = '<div class="loading"></div>';
+                
+                // Simulate search delay
+                setTimeout(() => {
+                    // Check if a page exists with this name
+                    const pageName = searchTerm.toLowerCase().replace(/\s+/g, '-') + '.php';
+                    checkPageExists(pageName, searchTerm);
+                    searchBtn.innerHTML = originalContent;
+                }, 1000);
+            }
+        }
+
+        // Check if page exists and navigate
+        function checkPageExists(pageName, searchTerm) {
+            // In a real implementation, you would make an AJAX call to check if the page exists
+            // For this demo, we'll simulate the check
+            fetch(pageName, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = pageName;
+                    } else {
+                        alert(`Aucune page trouvée pour "${searchTerm}"`);
+                    }
+                })
+                .catch(() => {
+                    alert(`Aucune page trouvée pour "${searchTerm}"`);
+                });
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (!header.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileBtn.classList.remove('active');
+                
+                // Reset mobile menu button
+                mobileBtn.querySelector('span:nth-child(1)').style.transform = '';
+                mobileBtn.querySelector('span:nth-child(2)').style.opacity = '1';
+                mobileBtn.querySelector('span:nth-child(3)').style.transform = '';
+            }
+        });
+    </script>
