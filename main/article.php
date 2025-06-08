@@ -634,7 +634,6 @@ if ($article) {
                     <li><a href="glossaire.html">GLOSSAIRE</a></li>
                     <li><a href="itineraires.html">ITINÉRAIRES</a></li>
                     <li><a href="histoire.html">HISTOIRE</a></li>
-                    <li><a href="profil.php" class="active">PROFIL</a></li>
                 </ul>
             </nav>
 
