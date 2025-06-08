@@ -1,0 +1,195 @@
+[2025-06-08 15:35:57] [2025-06-08T13:35:57.756Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:35:57] [2025-06-08T13:35:57.756Z] ERREUR: Bouton Nouvelle Anecdote non trouvé
+[2025-06-08 15:35:57] [2025-06-08T13:35:57.756Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:35:57] [2025-06-08T13:35:57.756Z] ERREUR: Bouton Nouvel Article non trouvé
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.347Z] Chargement des anecdotes pour le select
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.347Z] Chargement des données pour l'item 10
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.348Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.348Z] Ajout de la classe show au modal
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.348Z] Modal ouvert avec succès
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.346Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.346Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.421Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.423Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"balade_quais.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:36:02] [2025-06-08T13:36:02.424Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.234Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.235Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.235Z] Chargement des données pour l'item 4
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.236Z] Modal ouvert avec succès
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.236Z] Ajout de la classe show au modal
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.292Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.293Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.292Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance"}
+[2025-06-08 15:36:06] [2025-06-08T13:36:06.234Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.210Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.211Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.211Z] Chargement des anecdotes pour le select
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.211Z] Chargement des données pour l'item 10
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.212Z] Ajout de la classe show au modal
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.212Z] Modal ouvert avec succès
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.278Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.280Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.211Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:36:10] [2025-06-08T13:36:10.278Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"balade_quais.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:43:36] [2025-06-08T13:43:36.174Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:43:36] [2025-06-08T13:43:36.174Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.208Z] Clic sur bouton Nouvel Article
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.209Z] Tentative d'ouverture du modal - Type: article, Item: null
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.209Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.209Z] Chargement des anecdotes pour le select
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.209Z] Ajout de la classe show au modal
+[2025-06-08 15:43:37] [2025-06-08T13:43:37.210Z] Modal ouvert avec succès
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Chargement des anecdotes pour le select
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Chargement des données pour l'item 10
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Ajout de la classe show au modal
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.737Z] Modal ouvert avec succès
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.822Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.823Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"balade_quais.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:43:39] [2025-06-08T13:43:39.823Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Tentative d'ouverture du modal - Type: article, Item: null
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Clic sur bouton Nouvel Article
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Chargement des anecdotes pour le select
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Ajout de la classe show au modal
+[2025-06-08 15:44:27] [2025-06-08T13:44:27.319Z] Modal ouvert avec succès
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.072Z] Chargement des anecdotes pour le select
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.071Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.072Z] Chargement des données pour l'item 10
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.072Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.072Z] Ajout de la classe show au modal
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.071Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.072Z] Modal ouvert avec succès
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.167Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.166Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:44:29] [2025-06-08T13:44:29.166Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"balade_quais.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:47:44] [2025-06-08T13:47:44.490Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:47:44] [2025-06-08T13:47:44.490Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] Chargement des anecdotes pour le select
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] Chargement des données pour l'item 10
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.132Z] Modal ouvert avec succès
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.131Z] Ajout de la classe show au modal
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.227Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.227Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"balade_quais.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:47:49] [2025-06-08T13:47:49.228Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:50:04] [2025-06-08T13:50:03.950Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:50:04] [2025-06-08T13:50:03.951Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:50:36] [2025-06-08T13:50:36.666Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:50:36] [2025-06-08T13:50:36.666Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:54:15] [2025-06-08T13:54:15.008Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:54:15] [2025-06-08T13:54:15.008Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.874Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.875Z] Chargement des anecdotes pour le select
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.875Z] Chargement des données pour l'item 8
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.875Z] loadItemData appelée - Type: article, ID: 8
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.875Z] Ajout de la classe show au modal
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.875Z] Modal ouvert avec succès
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.955Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:54:19] [2025-06-08T13:54:19.953Z] Données reçues pour loadItemData: | Erreur: {"id_a":8,"image_miniature":"vert_galant_mystere.jpg","nom":"Le Secret du Vert-Galant","date_creation":"2024-03-12 15:20:00","text":"Le square du Vert-Galant cache-t-il un tunnel secret? La legende raconte qu'Henri IV rejoignait discretement ses favorites par un passage souterrain. Cette histoire, vraie ou fausse, ajoute au mystere de ce lieu emblematique.","tags":"legende, royaute, mystere","id_ann":9,"id_u":2,"utilisateur_nom":"Pierre Martin","utilisateur_role":"Guide touristique"}
+[2025-06-08 15:54:20] [2025-06-08T13:54:19.874Z] Tentative d'ouverture du modal - Type: article, Item: 8
+[2025-06-08 15:54:20] [2025-06-08T13:54:19.953Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:54:35] [2025-06-08T13:54:35.666Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:54:35] [2025-06-08T13:54:35.666Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.729Z] Tentative d'ouverture du modal - Type: article, Item: 6
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.729Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.729Z] Chargement des données pour l'item 6
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.730Z] Ajout de la classe show au modal
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.729Z] Chargement des anecdotes pour le select
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.730Z] loadItemData appelée - Type: article, ID: 6
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.730Z] Modal ouvert avec succès
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.816Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.816Z] Données reçues pour loadItemData: | Erreur: {"id_a":6,"image_miniature":"voie_pompidou.jpg","nom":"La Voie Georges Pompidou","date_creation":"2024-02-25 08:30:00","text":"Inauguree en 1967, cette voie express longe la rive droite. Elle porte le nom du futur president et offre une perspective dynamique sur les monuments. Les automobilistes beneficient d'un panorama unique sur Paris historique.","tags":"transport, urbanisme, patrimoine","id_ann":6,"id_u":2,"utilisateur_nom":"Pierre Martin","utilisateur_role":"Guide touristique"}
+[2025-06-08 15:54:37] [2025-06-08T13:54:37.817Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:54:45] [2025-06-08T13:54:45.523Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:54:45] [2025-06-08T13:54:45.523Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.345Z] Tentative d'ouverture du modal - Type: article, Item: 5
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] Chargement des anecdotes pour le select
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] Modal ouvert avec succès
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] Ajout de la classe show au modal
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.418Z] Données reçues pour loadItemData: | Erreur: {"id_a":5,"image_miniature":"crue_seine_1910.jpg","nom":"La Grande Crue de 1910","date_creation":"2024-02-18 11:00:00","text":"En janvier 1910, la Seine envahit Paris. Les quais disparaissent sous 8 metres d'eau. Cette crue historique transforme la capitale en Venise ephemere. Les reperes de niveau, encore visibles, temoignent de cet evenement exceptionnel.","tags":"histoire, catastrophe, memoire","id_ann":5,"id_u":1,"utilisateur_nom":"Marie Dubois","utilisateur_role":"Historienne"}
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.417Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.419Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] loadItemData appelée - Type: article, ID: 5
+[2025-06-08 15:54:50] [2025-06-08T13:54:50.346Z] Chargement des données pour l'item 5
+[2025-06-08 15:55:07] [2025-06-08T13:55:07.940Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:55:07] [2025-06-08T13:55:07.940Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.553Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.553Z] Tentative d'ouverture du modal - Type: article, Item: 5
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.553Z] Chargement des anecdotes pour le select
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.554Z] Chargement des données pour l'item 5
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.554Z] loadItemData appelée - Type: article, ID: 5
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.554Z] Modal ouvert avec succès
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.554Z] Ajout de la classe show au modal
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.636Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.636Z] Données reçues pour loadItemData: | Erreur: {"id_a":5,"image_miniature":"https://parisjetaime.com/data/layout_image/22359_Jardins-de-l%27Archipel-des-Berges-de-Seine-Niki-de-Saint-Phalle--630x405--%C2%A9-Marc-Bertrand.jpg","nom":"La Grande Crue de 1910","date_creation":"2024-02-18 11:00:00","text":"En janvier 1910, la Seine envahit Paris. Les quais disparaissent sous 8 metres d'eau. Cette crue historique transforme la capitale en Venise ephemere. Les reperes de niveau, encore visibles, temoignent de cet evenement exceptionnel.","tags":"histoire, catastrophe, memoire","id_ann":5,"id_u":1,"utilisateur_nom":"Marie Dubois","utilisateur_role":"Historienne"}
+[2025-06-08 15:55:10] [2025-06-08T13:55:10.637Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.545Z] Chargement des anecdotes pour le select
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.545Z] Chargement des données pour l'item 4
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.545Z] loadItemData appelée - Type: article, ID: 4
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.545Z] Ajout de la classe show au modal
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.545Z] Modal ouvert avec succès
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.611Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.610Z] Données reçues pour loadItemData: | Erreur: {"id_a":4,"image_miniature":"pont_arts_cadenas.jpg","nom":"Le Pont des Arts et ses Cadenas","date_creation":"2024-02-10 16:20:00","text":"Pendant des annees, les cadenas d'amour ornaient le Pont des Arts. Couples du monde entier y gravaient leurs serments. Cette tradition romantique, bien que supprimee, reste gravee dans la memoire collective parisienne.","tags":"romance, tradition, culture","id_ann":4,"id_u":5,"utilisateur_nom":"Claire Moreau","utilisateur_role":"Journaliste culturelle"}
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.544Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.544Z] Tentative d'ouverture du modal - Type: article, Item: 4
+[2025-06-08 15:55:12] [2025-06-08T13:55:12.610Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:55:22] [2025-06-08T13:55:22.556Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:55:22] [2025-06-08T13:55:22.556Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.832Z] Tentative d'ouverture du modal - Type: article, Item: 3
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] Chargement des anecdotes pour le select
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] Chargement des données pour l'item 3
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] Ajout de la classe show au modal
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] Modal ouvert avec succès
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] loadItemData appelée - Type: article, ID: 3
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.896Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.898Z] Données reçues pour loadItemData: | Erreur: {"id_a":3,"image_miniature":"peniches_canal.jpg","nom":"Vivre sur une Peniche","date_creation":"2024-02-03 09:45:00","text":"Les peniches transformees en habitations offrent un mode de vie unique. Amarrees le long des quais, elles allient confort moderne et charme nautique. Leurs proprietaires ont choisi de vivre au rythme de la Seine.","tags":"lifestyle, habitat, originalite","id_ann":3,"id_u":3,"utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.900Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:55:24] [2025-06-08T13:55:24.833Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:55:34] [2025-06-08T13:55:34.561Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:55:34] [2025-06-08T13:55:34.561Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.392Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.393Z] Chargement des anecdotes pour le select
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.393Z] Chargement des données pour l'item 2
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.393Z] loadItemData appelée - Type: article, ID: 2
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.393Z] Ajout de la classe show au modal
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.393Z] Modal ouvert avec succès
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.470Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.469Z] Données reçues pour loadItemData: | Erreur: {"id_a":2,"image_miniature":"notre_dame_quai.jpg","nom":"Notre-Dame vue des Quais","date_creation":"2024-01-20 14:15:00","text":"La cathedrale gothique domine majestueusement les quais depuis 850 ans. Sa silhouette se reflete dans les eaux calmes de la Seine. Les quais offrent la plus belle perspective pour admirer ce chef-d'oeuvre architectural.","tags":"architecture, histoire, patrimoine","id_ann":2,"id_u":4,"utilisateur_nom":"Jean Rousseau","utilisateur_role":"Architecte"}
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.469Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:55:36] [2025-06-08T13:55:36.392Z] Tentative d'ouverture du modal - Type: article, Item: 2
+[2025-06-08 15:55:43] [2025-06-08T13:55:43.128Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:55:43] [2025-06-08T13:55:43.129Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.127Z] Tentative d'ouverture du modal - Type: article, Item: 1
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] Chargement des données pour l'item 1
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] Chargement des anecdotes pour le select
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] loadItemData appelée - Type: article, ID: 1
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] Modal ouvert avec succès
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.128Z] Ajout de la classe show au modal
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.206Z] Données reçues pour loadItemData: | Erreur: {"id_a":1,"image_miniature":"bouquinistes_01.jpg","nom":"Les Bouquinistes Parisiens","date_creation":"2024-01-15 10:30:00","text":"Depuis 1859, les bouquinistes animent les quais de Seine avec leurs boites vertes. Ces marchands de livres anciens perpetuent une tradition unique au monde. Chaque jour, ils ouvrent leurs etals face a Notre-Dame, offrant aux passants des tresors litteraires.","tags":"histoire, culture, livres","id_ann":1,"id_u":1,"utilisateur_nom":"Marie Dubois","utilisateur_role":"Historienne"}
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.207Z] Données chargées avec succès dans le formulaire
+[2025-06-08 15:55:46] [2025-06-08T13:55:46.206Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-08 15:56:06] [2025-06-08T13:56:06.053Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:56:06] [2025-06-08T13:56:06.053Z] Gestionnaires d'événements initialisés
+[2025-06-08 15:56:48] [2025-06-08T13:56:48.838Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 15:56:48] [2025-06-08T13:56:48.838Z] Gestionnaires d'événements initialisés
+[2025-06-08 16:40:37] [2025-06-08T14:40:37.668Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 16:40:37] [2025-06-08T14:40:37.668Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:05:21] [2025-06-08T15:05:21.684Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 17:05:21] [2025-06-08T15:05:21.684Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:11:44] [2025-06-08T15:11:44.612Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 17:11:44] [2025-06-08T15:11:44.613Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:31:58] [2025-06-08T15:31:58.835Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 17:31:58] [2025-06-08T15:31:58.835Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:32:41] [2025-06-08T15:32:41.559Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 17:32:41] [2025-06-08T15:32:41.559Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:35:35] [2025-06-08T15:35:35.801Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-08 17:35:35] [2025-06-08T15:35:35.801Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:35:54] [2025-06-08T15:35:54.705Z] Gestionnaires d'événements initialisés
+[2025-06-08 17:35:54] [2025-06-08T15:35:54.705Z] DOM chargé, initialisation des gestionnaires d'événements
