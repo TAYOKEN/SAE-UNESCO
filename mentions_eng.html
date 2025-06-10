@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Mentions - MCN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #333333;
+        }
+
+        /* Header */
+        .header {
+            background: #EA5C0D;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+                /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        .lang-flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flag-fr {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDI2NTQiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjE0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0VGMTkyMCIvPgo8L3N2Zz4K');
+        }
+
+        .flag-en {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIxIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDEyMTY5Ii8+CjxwYXRoIGQ9Ik0wIDBoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDRoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgNmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDhoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMTBoMjF2MUgweiIgZmlsbD0iI0NFMTEyNCIvPgo8cGF0aCBkPSJNMCAxMmgyMXYxSDB6IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMCAxNGgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMTIxNjkiLz4KPC9zdmc+Cg==');
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            padding: 10px 40px 10px 15px;
+            border: none;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 14px;
+            outline: none;
+            transition: width 0.3s ease;
+        }
+
+        .search-box:focus {
+            width: 300px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #EA5C0D;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1436976264462-9beef7369cd4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(234,92,13,0.3), rgba(247,175,62,0.3));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            z-index: 1;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: linear-gradient(135deg, #505050, #555555);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideInFromLeft 1s ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .content-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .content-section h2 {
+            color: #F7AF3E;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #EA5C0D, #F7AF3E);
+            border-radius: 2px;
+        }
+
+        .content-section h3 {
+            color: #EA5C0D;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .content-section p {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            color: #ecf0f1;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #3a3a3a, #454545);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: #F7AF3E;
+            box-shadow: 0 15px 35px rgba(247,175,62,0.2);
+        }
+
+        .team-member h4 {
+            color: #F7AF3E;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            color: #ecf0f1;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, #EA5C0D, #F7AF3E);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-info a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #505050;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: #F7AF3E;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #EA5C0D;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: #EA5C0D;
+                width: 100%;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .search-container {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+
+            .main-container {
+                padding: 20px;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade in animation */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="main/index.php" class="logo">
+                <img src="Images/logo.png" alt="MCN Logo" onerror="this.src='https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80'">
+                MCN
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="glossaire_eng.html">GLOSSARY</a></li>
+                    <li><a href="itineraires_eng.html">ITINERARIES</a></li>
+                    <li><a href="histoire_eng.html">HISTORY</a></li>
+                    <li><a href="mentions_eng.html" class="active">LEGAL</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <a href="mentions.html" class="lang-toggle" title="Basculer vers le français">
+                    <div class="lang-flag flag-fr"></div>
+                    <span>FR</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Legal Mentions</h1>
+        <p>Legal information and site credits</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Site Identification -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Site Identification</h2>
+            <p><strong>Site Name:</strong> MCN - The Architecture of Paris</p>
+            <p><strong>URL:</strong> tayoken.xyz/sae5</p>
+            <p><strong>Site Nature:</strong> Educational and informative website about Parisian architecture & academic project</p>
+            <p><strong>Creation Date:</strong> 2025</p>
+        </section>
+
+        <!-- Site Publisher -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Site Publisher</h2>
+            <p>This site was created as part of an educational project by a team of students passionate about Parisian architecture and history.</p>
+            
+            <h3>Development Team</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Yanis BOUKAYOUH</h4>
+                    <p>Developer & Designer</p>
+                </div>
+                <div class="team-member">
+                    <h4>Issam BEN HAMOUDA</h4>
+                    <p>Developer & Project Manager</p>
+                </div>
+                <div class="team-member">
+                    <h4>Piyush BHATT</h4>
+                    <p>Tester</p>
+                </div>
+                <div class="team-member">
+                    <h4>Charles SUSINI</h4>
+                    <p>Tester</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <a href="mailto:yanis.boukayouh@edu.univ-eiffel.fr">yanis.boukayouh@edu.univ-eiffel.fr</a>
+            </div>
+        </section>
+
+        <!-- Hosting -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Hosting</h2>
+            <p>The site is hosted by a professional web hosting provider that complies with current security and privacy standards.</p>
+        </section>
+
+        <!-- Intellectual Property -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Intellectual Property</h2>
+            <p>All content of this site (texts, images, videos, graphic elements, logos, etc.) is protected by copyright and belongs to the site creators or their rightful owners.</p>
+            
+            <h3>Content Usage</h3>
+            <ul>
+                <li>Any reproduction, representation, modification, publication, or adaptation of all or part of the site elements is prohibited without prior written authorization</li>
+                <li>Use for educational and non-commercial purposes is authorized with source citation</li>
+                <li>Images used come from royalty-free sources or under Creative Commons license</li>
+            </ul>
+        </section>
+
+        <!-- Personal Data -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Personal Data Protection</h2>
+            <p>In accordance with the General Data Protection Regulation (GDPR) and the Data Protection Act:</p>
+            
+            <h3>Data Collection</h3>
+            <ul>
+                <li>This site does not collect any personal data without the explicit consent of the user</li>
+                <li>Data collected via the contact form is used only to respond to requests</li>
+                <li>No data is transmitted to third parties without authorization</li>
+            </ul>
+
+            <h3>Your Rights</h3>
+            <p>In accordance with regulations, you have the right to access, rectify, delete, and object to your personal data. To exercise these rights, contact us at: <strong>contact@tayoken.xyz</strong></p>
+        </section>
+
+        <!-- Liability -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Limitation of Liability</h2>
+            <p>The information contained on this site is provided for informational and educational purposes. While we strive to maintain accurate and up-to-date information:</p>
+            
+            <ul>
+                <li>We do not guarantee the accuracy, completeness, or timeliness of the information</li>
+                <li>We cannot be held responsible for direct or indirect damages resulting from the use of the site</li>
+                <li>Links to external sites are provided for informational purposes and we are not responsible for their content</li>
+            </ul>
+        </section>
+
+        <!-- Applicable Law -->
+        <section class="content-section fade-in-on-scroll">
+            <h2>Applicable Law</h2>
+            <p>These legal mentions are governed by French law. In case of dispute, French courts will have sole jurisdiction.</p>
+            
+            <h3>Modification of Legal Mentions</h3>
+            <p>These legal mentions may be modified at any time. It is advisable to consult them regularly. The version currently online is authoritative.</p>
+            
+            <p><strong>Last updated:</strong> June 2025</p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 MCN - The Architecture of Paris</p>
+        <div>
+            <a href="mentions_eng.html">Legal</a>
+            <a href="mailto:contact@tayoken.xyz">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            
+            navLinks.classList.toggle('active');
+            mobileBtn.classList.toggle('active');
+        }
+
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                alert(`Search for: "${searchTerm}"`);
+            }
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (!header.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileBtn.classList.remove('active');
+            }
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in-on-scroll');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+
+        // Scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initial animation check
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+        });
+
+        // Add hover effects to content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 15px 40px rgba(247,175,62,0.1)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add smooth reveal animation for sections
+        window.addEventListener('load', function() {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
