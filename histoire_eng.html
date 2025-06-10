@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histoire - L'Architecture de Paris</title>
+    <title>History - Paris Architecture</title>
     <style>
         * {
             margin: 0;
@@ -80,7 +80,7 @@
             transform: translateY(-2px);
         }
 
-                /* Language Selector */
+                        /* Language Selector */
         .language-selector {
             position: relative;
             margin-left: 20px;
@@ -151,6 +151,41 @@
             cursor: pointer;
             font-size: 18px;
             color: #EA5C0D;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lang-flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 2px;
+        }
+
+        .flag-fr {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><path fill="%23005A9C" d="M0 0h1v2H0z"/><path fill="white" d="M1 0h1v2H1z"/><path fill="%23EF4135" d="M2 0h1v2H2z"/></svg>');
         }
 
         /* Mobile Menu */
@@ -498,7 +533,7 @@
                 display: flex;
             }
 
-            .search-container {
+            .search-container, .language-selector {
                 display: none;
             }
 
@@ -588,22 +623,21 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="glossaire.html">GLOSSAIRE</a></li>
-                    <li><a href="itineraires.html">ITINÉRAIRES</a></li>
-                    <li><a href="histoire.html" class="active">HISTOIRE</a></li>
+                    <li><a href="glossaire.html">GLOSSARY</a></li>
+                    <li><a href="itineraires.html">ITINERARIES</a></li>
+                    <li><a href="histoire.html" class="active">HISTORY</a></li>
                 </ul>
             </nav>
 
             <div class="search-container">
-                <input type="text" class="search-box" placeholder="Rechercher..." id="searchInput">
+                <input type="text" class="search-box" placeholder="Search..." id="searchInput">
                 <button class="search-btn" onclick="performSearch()">🔍</button>
             </div>
 
-            <!-- Language Selector -->
             <div class="language-selector">
-                <a href="histoire_eng.html" class="lang-toggle" title="Switch to English">
-                    <div class="lang-flag flag-en"></div>
-                    <span>EN</span>
+                <a href="histoire.html" class="lang-toggle" title="Switch to French">
+                    <div class="lang-flag flag-fr"></div>
+                    <span>FR</span>
                 </a>
             </div>
 
@@ -617,10 +651,8 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        
-        <h1>L'Architecture de Paris</h1>
-        <p>Un voyage à travers les styles et les siècles</p>
-        
+        <h1>Paris Architecture</h1>
+        <p>A journey through styles and centuries</p>
     </section>
 
     <!-- Main Content -->
@@ -628,83 +660,83 @@
         <!-- Introduction -->
         <section class="intro-section">
             <h2>Introduction</h2>
-            <p>Paris est un véritable musée à ciel ouvert. À chaque coin de rue, l'architecture raconte l'histoire de la ville, ses révolutions artistiques, sociales et politiques. Des vestiges médiévaux aux lignes audacieuses de l'architecture contemporaine, la capitale française est une mosaïque de styles.</p>
+            <p>Paris is a true open-air museum. At every street corner, the architecture tells the story of the city, its artistic, social, and political revolutions. From medieval remains to the bold lines of contemporary architecture, the French capital is a mosaic of styles.</p>
         </section>
 
         <!-- Timeline -->
         <div class="timeline-container">
             <div class="timeline-item left fade-in-on-scroll">
                 <div class="content-box">
-                    <div class="period">Moyen Âge (IV° - XV° siècles)</div>
-                    <div class="period-title">Les Fondations de Paris</div>
+                    <div class="period">Middle Ages (4th - 15th centuries)</div>
+                    <div class="period-title">The Foundations of Paris</div>
                     <div class="description">
-                        L'architecture médiévale de Paris se caractérise par ses églises gothiques et ses premières fortifications.
+                        Medieval architecture in Paris is characterized by its Gothic churches and early fortifications.
                     </div>
                     <ul class="highlights">
-                        <li>IV° - X° siècle : Basilique des Saints-Andrés, abbaye Saint-Germain-des-Prés</li>
-                        <li>1163 : Début de Notre-Dame de Paris (gothique)</li>
-                        <li>Philippe Auguste : Enceinte et château du Louvre</li>
-                        <li>Charles V : Enceinte avec bastille, modernisation du palais de la Cité</li>
-                        <li>XV° siècle : Hôtel de Cluny, église Saint-Merri (gothique flamboyant)</li>
+                        <li>4th - 10th century: Basilica of Saints-Andrés, Saint-Germain-des-Prés Abbey</li>
+                        <li>1163: Beginning of Notre-Dame de Paris (Gothic)</li>
+                        <li>Philip Augustus: Enclosure and Louvre Castle</li>
+                        <li>Charles V: Enclosure with Bastille, modernization of the Palais de la Cité</li>
+                        <li>15th century: Hôtel de Cluny, Saint-Merri Church (Flamboyant Gothic)</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item right fade-in-on-scroll">
                 <div class="content-box">
-                    <div class="period">Époque Moderne (XVI° - XVIII° siècle)</div>
-                    <div class="period-title">Renaissance et Classicisme</div>
+                    <div class="period">Modern Era (16th - 18th century)</div>
+                    <div class="period-title">Renaissance and Classicism</div>
                     <div class="description">
-                        La Renaissance apporte de nouveaux codes architecturaux, suivie par l'âge classique français.
+                        The Renaissance brought new architectural codes, followed by the French classical age.
                     </div>
                     <ul class="highlights">
-                        <li>XVI° siècle : Style classique/baroque - place des Vosges, place Vendôme</li>
-                        <li>XVII° siècle : Néoclassicisme - Panthéon</li>
-                        <li>XVIII° siècle : Travaux Haussmanniens - grands boulevards, immeubles en pierre de taille</li>
+                        <li>16th century: Classical/Baroque style - Place des Vosges, Place Vendôme</li>
+                        <li>17th century: Neoclassicism - Panthéon</li>
+                        <li>18th century: Haussmann's works - grand boulevards, stone buildings</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item left fade-in-on-scroll">
                 <div class="content-box">
-                    <div class="period">Antiquité (I° - III° siècle)</div>
-                    <div class="period-title">Lutèce, Paris Antique</div>
+                    <div class="period">Antiquity (1st - 3rd century)</div>
+                    <div class="period-title">Lutetia, Ancient Paris</div>
                     <div class="description">
-                        Les vestiges gallo-romains témoignent des origines de la ville.
+                        The Gallo-Roman remains testify to the origins of the city.
                     </div>
                     <ul class="highlights">
-                        <li>Lutèce (Paris antique) sur l'île de la Cité et rive gauche</li>
-                        <li>Thermes de Cluny (forum romain)</li>
-                        <li>Arènes de Lutèce (amphithéâtre)</li>
+                        <li>Lutetia (ancient Paris) on the Île de la Cité and left bank</li>
+                        <li>Thermes de Cluny (Roman forum)</li>
+                        <li>Arènes de Lutèce (amphitheater)</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item right fade-in-on-scroll">
                 <div class="content-box">
-                    <div class="period">Renaissance et Temps Modernes (XV° - XVIII° siècle)</div>
-                    <div class="period-title">L'Évolution Architecturale</div>
+                    <div class="period">Renaissance and Modern Times (15th - 18th century)</div>
+                    <div class="period-title">Architectural Evolution</div>
                     <div class="description">
-                        Introduction de la Renaissance italienne et développement du style français classique.
+                        Introduction of the Italian Renaissance and development of French classical style.
                     </div>
                     <ul class="highlights">
                         <li>Fontaine des Innocents (Jean Goujon), Louvre (Pierre Lescot)</li>
-                        <li>Hôtels particuliers entre cour et jardin (ex. hôtel Carnavalet)</li>
-                        <li>Églises : Saint-Étienne-du-Mont, Saint-Gervais-Saint-Protais</li>
+                        <li>Private mansions between courtyard and garden (e.g., Hôtel Carnavalet)</li>
+                        <li>Churches: Saint-Étienne-du-Mont, Saint-Gervais-Saint-Protais</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item left fade-in-on-scroll">
                 <div class="content-box">
-                    <div class="period">XX° - XXI° siècles</div>
-                    <div class="period-title">Modernité et Innovation</div>
+                    <div class="period">20th - 21st centuries</div>
+                    <div class="period-title">Modernity and Innovation</div>
                     <div class="description">
-                        L'architecture contemporaine parisienne entre patrimoine et innovation.
+                        Contemporary Parisian architecture between heritage and innovation.
                     </div>
                     <ul class="highlights">
-                        <li>XX° siècle : Modernité - Centre Pompidou, tour Montparnasse, La Défense</li>
-                        <li>XXI° siècle : Architecture contemporaine, équilibre entre patrimoine et innovation</li>
+                        <li>20th century: Modernity - Centre Pompidou, Montparnasse Tower, La Défense</li>
+                        <li>21st century: Contemporary architecture, balance between heritage and innovation</li>
                     </ul>
                 </div>
             </div>
@@ -713,9 +745,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 MCN - L'Architecture de Paris</p>
+        <p>© 2025 MCN - Paris Architecture</p>
         <div>
-            <a href="mentions.html">Mentions Légales</a>
+            <a href="mentions.html">Legal Notice</a>
         </div>
     </footer>
 
@@ -734,7 +766,7 @@
             const searchTerm = document.getElementById('searchInput').value.trim();
             if (searchTerm) {
                 // Simple search implementation
-                alert(`Recherche pour: "${searchTerm}"`);
+                alert(`Search for: "${searchTerm}"`);
             }
         }
 

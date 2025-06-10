@@ -80,6 +80,49 @@
             transform: translateY(-2px);
         }
 
+                /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        .lang-flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flag-fr {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDI2NTQiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjE0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0VGMTkyMCIvPgo8L3N2Zz4K');
+        }
+
+        .flag-en {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIxIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDEyMTY5Ii8+CjxwYXRoIGQ9Ik0wIDBoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDRoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgNmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDhoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMTBoMjF2MUgweiIgZmlsbD0iI0NFMTEyNCIvPgo8cGF0aCBkPSJNMCAxMmgyMXYxSDB6IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMCAxNGgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMTIxNjkiLz4KPC9zdmc+Cg==');
+        }
+
         .search-container {
             position: relative;
         }
@@ -569,6 +612,13 @@
             <div class="search-container">
                 <input type="text" class="search-box" placeholder="Rechercher..." id="searchInput">
                 <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <a href="itineraires_eng.html" class="lang-toggle" title="Switch to English">
+                    <div class="lang-flag flag-en"></div>
+                    <span>EN</span>
+                </a>
             </div>
 
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
