@@ -142,68 +142,7 @@ body {
     background-color: #333333;
 }
 
-        .header {
-            background: #EA5C0D;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5em;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 8px;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 20px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Language Selector */
+       /* Language Selector */
         .language-selector {
             position: relative;
             margin-left: 20px;
@@ -247,37 +186,98 @@ body {
         }
 
 
-        .search-container {
-            position: relative;
-        }
+/* Header */
+.header {
+    background: #EA5C0D;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    height: 80px;
+    margin-bottom: -80px;
+}
 
-        .search-box {
-            padding: 10px 40px 10px 15px;
-            border: none;
-            border-radius: 25px;
-            width: 250px;
-            font-size: 14px;
-            outline: none;
-            transition: width 0.3s ease;
-        }
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-        .search-box:focus {
-            width: 300px;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
 
-        .search-btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            color: #EA5C0D;
-        }
+.logo:hover {
+    transform: scale(1.05);
+}
 
-/* Hero Section avec carrousel */
+.logo-image {
+    height: 60px; 
+    width: auto; 
+    object-fit: contain; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-box {
+    padding: 10px 40px 10px 15px;
+    border: none;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 14px;
+    outline: none;
+    transition: width 0.3s ease;
+}
+
+.search-box:focus {
+    width: 300px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #EA5C0D;
+}
+
 .hero {
     height: 500px;
     overflow: hidden;
@@ -335,7 +335,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text_eng-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .description_carrousel {
@@ -365,7 +365,7 @@ body {
     font-weight: bold;
     margin-bottom: 30px;
     position: relative;
-    text_eng-align: center;
+    text-align: center;
 }
 
 .titre_section::after {
@@ -442,7 +442,7 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 12px;
-    text_eng-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .description_article {
@@ -461,7 +461,7 @@ body {
 
 .lien_article {
     color: #EA5C0D;
-    text_eng-decoration: none;
+    text-decoration: none;
     font-size: 0.95rem;
     font-weight: bold;
     padding: 8px 16px;
@@ -502,7 +502,7 @@ body {
     font-size: 1.2rem;
 }
 
-.text_enge_anecdote {
+.texte_anecdote {
     color: #ecf0f1;
     font-size: 1rem;
     line-height: 1.6;
@@ -528,7 +528,7 @@ body {
     color: #F7AF3E;
     font-size: 2rem;
     margin-bottom: 25px;
-    text_eng-align: center;
+    text-align: center;
 }
 
 .resultats_recherche h3::after {
@@ -545,14 +545,14 @@ body {
 .footer {
     background: #505050;
     color: #ecf0f1;
-    text_eng-align: center;
+    text-align: center;
     padding: 30px 0;
     margin-top: 50px;
 }
 
 .footer a {
     color: #F7AF3E;
-    text_eng-decoration: none;
+    text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s ease;
 }
@@ -647,7 +647,7 @@ html {
 
             <!-- Language Selector -->
             <div class="language-selector">
-                <a href="glossaire.html" class="lang-toggle" title="Basculer vers le français">
+                <a href="index.php" class="lang-toggle" title="Basculer vers le français">
                     <div class="lang-flag flag-fr"></div>
                     <span>FR</span>
                 </a>
@@ -682,8 +682,8 @@ html {
             <?php else: ?>
                 <div class="diapositive_carrousel active" style="background-image: url('https://via.placeholder.com/1200x500/EA5C0D/FFFFFF?text_eng=Aucun+Article+Disponible');">
                     <div class="superposition_carrousel">
-                        <div class="titre_carrousel">Bienvenue sur M.C.N.</div>
-                        <div class="description_carrousel">Découvrez bientôt nos articles sur les Quais de Seine et le patrimoine UNESCO.</div>
+                        <div class="titre_carrousel">Welcome in M.C.N.</div>
+                        <div class="description_carrousel">Soon discover our articles about the Paris Quays de seine.</div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -694,7 +694,7 @@ html {
     <div class="main-container">
         <?php if (!empty($resultats_recherche)): ?>
             <div class="resultats_recherche">
-                <h3>Résultats de recherche pour "<?= htmlspecialchars($terme_recherche) ?>" (<?= count($resultats_recherche) ?> résultat<?= count($resultats_recherche) > 1 ? 's' : '' ?>)</h3>
+                <h3>Result for : "<?= htmlspecialchars($terme_recherche) ?>" (<?= count($resultats_recherche) ?> résultat<?= count($resultats_recherche) > 1 ? 's' : '' ?>)</h3>
                 <div class="grille_articles">
                     <?php foreach ($resultats_recherche as $article): ?>
                         <div class="carte_article">
@@ -774,7 +774,7 @@ html {
             <?php endforeach; ?>
         <?php else: ?>
             <div class="section">
-                <h2 class="titre_section">Aucun contenu disponible</h2>
+                <h2 class="titre_section">No content available.</h2>
                 <p style="color: #ecf0f1; text_eng-align: center; font-size: 1.1rem;">
                     Les articles et anecdotes seront bientôt disponibles. Revenez nous voir !
                 </p>
@@ -784,9 +784,9 @@ html {
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 Quais de Seine - Projet UNESCO</p>
+        <p>© 2025 Quais de Seine - Project UNESCO</p>
         <div>
-            <a href="mentions.html">Mentions Légales</a>
+            <a href="mentions_eng.html">Legal mentions</a>
         </div>
     </footer>
 

@@ -142,6 +142,50 @@ body {
     background-color: #333333;
 }
 
+       /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        .lang-flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 2px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flag-fr {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IiMwMDI2NTQiLz4KPHJlY3QgeD0iNyIgd2lkdGg9IjciIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjE0IiB3aWR0aD0iNyIgaGVpZ2h0PSIxNSIgZmlsbD0iI0VGMTkyMCIvPgo8L3N2Zz4K');
+        }
+
+        .flag-en {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIxIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDEyMTY5Ii8+CjxwYXRoIGQ9Ik0wIDBoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDRoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgNmgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxwYXRoIGQ9Ik0wIDhoMjF2MUgweiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTAgMTBoMjF2MUgweiIgZmlsbD0iI0NFMTEyNCIvPgo8cGF0aCBkPSJNMCAxMmgyMXYxSDB6IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMCAxNGgyMXYxSDB6IiBmaWxsPSIjQ0UxMTI0Ii8+CjxyZWN0IHdpZHRoPSI5IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMTIxNjkiLz4KPC9zdmc+Cg==');
+        }
+
+
 /* Header */
 .header {
     background: #EA5C0D;
@@ -581,27 +625,39 @@ html {
     </style>
 </head>
 <body>
-    <!-- Header -->
+       <!-- Header -->
     <header class="header">
         <div class="header-container">
             <a href="index.php" class="logo">
-                <div class="cercle_logo">M.C.N.</div>
+                <img src="../Images/logo.png" alt="Logo" onerror="this.src='https://images.unsplash.com/photo-1549813069-f95e44d7f498?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80'">
             </a>
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="../glossaire.html">GLOSSAIRE</a></li>
-                    <li><a href="../itineraires.html">ITINÉRAIRES</a></li>
-                    <li><a href="../histoire.html">HISTOIRE</a></li>
+                    <li><a href="../glossaire_eng.html">GLOSSARY</a></li>
+                    <li><a href="../itineraires_eng.html">ITINERARIES</a></li>
+                    <li><a href="../histoire_eng.html" class="active">HISTORY</a></li>
                 </ul>
             </nav>
         
-            <div class="search-container">
-                <form method="GET">
-                    <input type="text" name="recherche" class="search-box" placeholder="Rechercher un article..." value="<?= htmlspecialchars($terme_recherche) ?>">
-                    <button type="submit" class="search-btn">🔍</button>
-                </form>
+           <div class="search-container">
+                <input type="text" class="search-box" placeholder="Chercher..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">🔍</button>
             </div>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <a href="index_eng.php" class="lang-toggle" title="English Mode">
+                    <div class="lang-flag flag-en"></div>
+                    <span>EN</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
