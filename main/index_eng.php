@@ -1,13 +1,13 @@
 <?php
 // Configuration de la base de données PostgreSQL
 $serveur = 'localhost';
-$nom_base = 'unesco';
-$nom_utilisateur = 'postgres';
+$titre_eng_base = 'unesco';
+$titre_eng_utilisateur = 'postgres';
 $mot_de_passe = '2606';
 $port = '5432';
 
 try {
-    $pdo = new PDO("pgsql:host=$serveur;port=$port;dbname=$nom_base", $nom_utilisateur, $mot_de_passe);
+    $pdo = new PDO("pgsql:host=$serveur;port=$port;dbname=$titre_eng_base", $titre_eng_utilisateur, $mot_de_passe);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec("SET SESSION CHARACTERISTICS AS TRANSACTION ISOLATION LEVEL SERIALIZABLE");
     
@@ -15,7 +15,7 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 $requete = $pdo->prepare("
-    SELECT a.*, an.nom as nom_anecdote, u.nom as nom_auteur 
+    SELECT a.*, an.titre_eng as anecdote, u.nom as auteur 
     FROM articles a 
     LEFT JOIN anecdote an ON a.id_ann = an.id_ann 
     LEFT JOIN utilisateurs u ON a.id_u = u.id_u 
@@ -25,32 +25,32 @@ $requete = $pdo->prepare("
 $requete->execute();
 $articles_carrousel = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupération des tags les plus populaires
-$requete_tags = $pdo->prepare("
-    SELECT tags, COUNT(*) as count 
+// Récupération des tags_eng les plus populaires
+$requete_tags_eng = $pdo->prepare("
+    SELECT tags_eng, COUNT(*) as count 
     FROM articles 
-    WHERE tags IS NOT NULL AND tags != '' 
-    GROUP BY tags 
+    WHERE tags_eng IS NOT NULL AND tags_eng != '' 
+    GROUP BY tags_eng
     ORDER BY count DESC 
     LIMIT 10
 ");
-$requete_tags->execute();
-$tags_populaires = $requete_tags->fetchAll(PDO::FETCH_ASSOC);
+$requete_tags_eng->execute();
+$tags_eng_populaires = $requete_tags_eng->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupération des articles par tags populaires
+// Récupération des articles par tags_eng populaires
 $articles_par_tag = [];
 $anecdotes_affichees = [];
 
-foreach ($tags_populaires as $tag_info) {
-    $tag = $tag_info['tags'];
+foreach ($tags_eng_populaires as $tag_info) {
+    $tag = $tag_info['tags_eng'];
     
     // Récupérer les articles pour ce tag
 $requete = $pdo->prepare("
-    SELECT a.*, an.nom as nom_anecdote, an.text as texte_anecdote, u.nom as nom_auteur 
+    SELECT a.*, an.titre_eng as titre_eng_anecdote, an.text_eng as text_enge_anecdote, u.nom as titre_eng_auteur 
     FROM articles a 
     LEFT JOIN anecdote an ON a.id_ann = an.id_ann 
     LEFT JOIN utilisateurs u ON a.id_u = u.id_u 
-    WHERE a.tags ILIKE ? 
+    WHERE a.tags_eng ILIKE ? 
     ORDER BY a.date_creation DESC 
     LIMIT 3
 ");
@@ -65,7 +65,7 @@ $requete = $pdo->prepare("
             $requete_anecdote = $pdo->prepare("
     SELECT an.* 
     FROM anecdote an 
-    WHERE an.tags ILIKE ? 
+    WHERE an.tags_eng ILIKE ? 
     AND an.id_ann NOT IN (" . implode(',', array_merge([0], $anecdotes_affichees)) . ")
     ORDER BY RANDOM() 
     LIMIT 1
@@ -85,11 +85,11 @@ $terme_recherche = '';
 if (isset($_GET['recherche']) && !empty($_GET['recherche'])) {
     $terme_recherche = $_GET['recherche'];
 $requete = $pdo->prepare("
-    SELECT a.*, an.nom as nom_anecdote, u.nom as nom_auteur 
+    SELECT a.*, an.titre_eng as titre_eng_anecdote, u.nom as titre_eng_auteur 
     FROM articles a 
     LEFT JOIN anecdote an ON a.id_ann = an.id_ann 
     LEFT JOIN utilisateurs u ON a.id_u = u.id_u 
-    WHERE a.nom ILIKE ? OR a.text ILIKE ? OR a.tags ILIKE ?
+    WHERE a.titre_eng ILIKE ? OR a.text_eng ILIKE ? OR a.tags_eng ILIKE ?
     ORDER BY a.date_creation DESC
 ");
     $requete->execute(['%' . $terme_recherche . '%', '%' . $terme_recherche . '%', '%' . $terme_recherche . '%']);
@@ -98,7 +98,7 @@ $requete = $pdo->prepare("
 
 function getImageLink($image_name) {
     if (empty($image_name)) {
-        return "https://via.placeholder.com/400x300/EA5C0D/FFFFFF?text=UNESCO+Image";
+        return "https://via.placeholder.com/400x300/EA5C0D/FFFFFF?text_eng=UNESCO+Image";
     }
     
     // Si URL
@@ -112,7 +112,7 @@ function getImageLink($image_name) {
     }
     
     // Si rien
-    return "https://via.placeholder.com/400x300/EA5C0D/FFFFFF?text=UNESCO+Image";
+    return "https://via.placeholder.com/400x300/EA5C0D/FFFFFF?text_eng=UNESCO+Image";
 }
 ?>
 
@@ -167,7 +167,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    text_eng-decoration: none;
     transition: transform 0.3s ease;
 }
 
@@ -190,12 +190,12 @@ body {
 
 .nav-links a {
     color: white;
-    text-decoration: none;
+    text_eng-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     padding: 8px 16px;
     border-radius: 20px;
-    text-transform: uppercase;
+    text_eng-transform: uppercase;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -293,7 +293,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text_eng-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .description_carrousel {
@@ -323,7 +323,7 @@ body {
     font-weight: bold;
     margin-bottom: 30px;
     position: relative;
-    text-align: center;
+    text_eng-align: center;
 }
 
 .titre_section::after {
@@ -400,7 +400,7 @@ body {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 12px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text_eng-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .description_article {
@@ -419,7 +419,7 @@ body {
 
 .lien_article {
     color: #EA5C0D;
-    text-decoration: none;
+    text_eng-decoration: none;
     font-size: 0.95rem;
     font-weight: bold;
     padding: 8px 16px;
@@ -460,7 +460,7 @@ body {
     font-size: 1.2rem;
 }
 
-.texte_anecdote {
+.text_enge_anecdote {
     color: #ecf0f1;
     font-size: 1rem;
     line-height: 1.6;
@@ -486,7 +486,7 @@ body {
     color: #F7AF3E;
     font-size: 2rem;
     margin-bottom: 25px;
-    text-align: center;
+    text_eng-align: center;
 }
 
 .resultats_recherche h3::after {
@@ -503,14 +503,14 @@ body {
 .footer {
     background: #505050;
     color: #ecf0f1;
-    text-align: center;
+    text_eng-align: center;
     padding: 30px 0;
     margin-top: 50px;
 }
 
 .footer a {
     color: #F7AF3E;
-    text-decoration: none;
+    text_eng-decoration: none;
     margin: 0 15px;
     transition: color 0.3s ease;
 }
@@ -600,7 +600,7 @@ html {
         
             <div class="search-container">
                 <form method="GET">
-                    <input type="text" name="recherche" class="search-box" placeholder="Rechercher un article..." value="<?= htmlspecialchars($terme_recherche) ?>">
+                    <input type="text_eng" name="recherche" class="search-box" placeholder="Rechercher un article..." value="<?= htmlspecialchars($terme_recherche) ?>">
                     <button type="submit" class="search-btn">🔍</button>
                 </form>
             </div>
@@ -615,18 +615,18 @@ html {
                     <div class="diapositive_carrousel <?= $index === 0 ? 'active' : '' ?>" 
                          style="background-image: url('<?= getImageLink($article['image_miniature']) ?>');">
                         <div class="superposition_carrousel">
-                            <div class="titre_carrousel"><?= htmlspecialchars($article['nom']) ?></div>
+                            <div class="titre_carrousel"><?= htmlspecialchars($article['titre_eng']) ?></div>
                             <div class="description_carrousel">
-                                <?= htmlspecialchars(substr($article['text'], 0, 200)) ?>...
+                                <?= htmlspecialchars(substr($article['text_eng'], 0, 200)) ?>...
                             </div>
-                            <?php if (!empty($article['nom_auteur'])): ?>
-                                <div class="auteur_carrousel">Par <?= htmlspecialchars($article['nom_auteur']) ?></div>
+                            <?php if (!empty($article['titre_eng_auteur'])): ?>
+                                <div class="auteur_carrousel">Par <?= htmlspecialchars($article['titre_eng_auteur']) ?></div>
                             <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <div class="diapositive_carrousel active" style="background-image: url('https://via.placeholder.com/1200x500/EA5C0D/FFFFFF?text=Aucun+Article+Disponible');">
+                <div class="diapositive_carrousel active" style="background-image: url('https://via.placeholder.com/1200x500/EA5C0D/FFFFFF?text_eng=Aucun+Article+Disponible');">
                     <div class="superposition_carrousel">
                         <div class="titre_carrousel">Bienvenue sur M.C.N.</div>
                         <div class="description_carrousel">Découvrez bientôt nos articles sur les Quais de Seine et le patrimoine UNESCO.</div>
@@ -646,18 +646,18 @@ html {
                         <div class="carte_article">
                             <div class="image_article" style="background-image: url('<?= getImageLink($article['image_miniature']) ?>');"></div>
                             <div class="contenu_article">
-                                <div class="titre_article"><?= htmlspecialchars($article['nom']) ?></div>
+                                <div class="titre_article"><?= htmlspecialchars($article['titre_eng']) ?></div>
                                 <div class="meta_article">
-                                    <?php if (!empty($article['nom_auteur'])): ?>
-                                        Par <?= htmlspecialchars($article['nom_auteur']) ?> • 
+                                    <?php if (!empty($article['titre_eng_auteur'])): ?>
+                                        Par <?= htmlspecialchars($article['titre_eng_auteur']) ?> • 
                                     <?php endif; ?>
                                     <?= date('d/m/Y', strtotime($article['date_creation'])) ?>
-                                    <?php if (!empty($article['tags'])): ?>
-                                        • <span style="color: #F7AF3E;"><?= htmlspecialchars($article['tags']) ?></span>
+                                    <?php if (!empty($article['tags_eng'])): ?>
+                                        • <span style="color: #F7AF3E;"><?= htmlspecialchars($article['tags_eng']) ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <div class="description_article">
-                                    <?= htmlspecialchars(substr($article['text'], 0, 150)) ?>...
+                                    <?= htmlspecialchars(substr($article['text_eng'], 0, 150)) ?>...
                                 </div>
                                 <a href="article.php?id=<?= $article['id_a'] ?>" class="lien_article">Lire plus</a>
                             </div>
@@ -686,15 +686,15 @@ html {
                                 <div class="carte_article">
                                     <div class="image_article" style="background-image: url('<?= getImageLink($article['image_miniature']) ?>');"></div>
                                     <div class="contenu_article">
-                                        <div class="titre_article"><?= htmlspecialchars($article['nom']) ?></div>
+                                        <div class="titre_article"><?= htmlspecialchars($article['titre_eng']) ?></div>
                                         <div class="meta_article">
-                                            <?php if (!empty($article['nom_auteur'])): ?>
-                                                Par <?= htmlspecialchars($article['nom_auteur']) ?> • 
+                                            <?php if (!empty($article['titre_eng_auteur'])): ?>
+                                                Par <?= htmlspecialchars($article['titre_eng_auteur']) ?> • 
                                             <?php endif; ?>
                                             <?= date('d/m/Y', strtotime($article['date_creation'])) ?>
                                         </div>
                                         <div class="description_article">
-                                            <?= htmlspecialchars(substr($article['text'], 0, 120)) ?>...
+                                            <?= htmlspecialchars(substr($article['text_eng'], 0, 120)) ?>...
                                         </div>
                                         <a href="article.php?id=<?= $article['id_a'] ?>" class="lien_article">Lire plus</a>
                                     </div>
@@ -707,12 +707,12 @@ html {
                 <!-- Affichage d'une anecdote après certaines sections -->
                 <?php if (isset($data['anecdote'])): ?>
                     <div class="anecdote">
-                        <div class="titre_anecdote"><?= htmlspecialchars($data['anecdote']['nom']) ?></div>
-                        <div class="texte_anecdote"><?= nl2br(htmlspecialchars($data['anecdote']['text'])) ?></div>
+                        <div class="titre_anecdote"><?= htmlspecialchars($data['anecdote']['titre_eng']) ?></div>
+                        <div class="text_enge_anecdote"><?= nl2br(htmlspecialchars($data['anecdote']['text_eng'])) ?></div>
                         <div class="date_anecdote">
                             <?= date('d/m/Y', strtotime($data['anecdote']['date_'])) ?>
-                            <?php if (!empty($data['anecdote']['tags'])): ?>
-                                • <?= htmlspecialchars($data['anecdote']['tags']) ?>
+                            <?php if (!empty($data['anecdote']['tags_eng'])): ?>
+                                • <?= htmlspecialchars($data['anecdote']['tags_eng']) ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -721,7 +721,7 @@ html {
         <?php else: ?>
             <div class="section">
                 <h2 class="titre_section">Aucun contenu disponible</h2>
-                <p style="color: #ecf0f1; text-align: center; font-size: 1.1rem;">
+                <p style="color: #ecf0f1; text_eng-align: center; font-size: 1.1rem;">
                     Les articles et anecdotes seront bientôt disponibles. Revenez nous voir !
                 </p>
             </div>
@@ -740,7 +740,7 @@ html {
         // Fonctionnalité du carrousel
         let diapositive_actuelle = 0;
         const diapositives = document.querySelectorAll('.diapositive_carrousel');
-        const nombre_diapositives = diapositives.length;
+        const titre_engbre_diapositives = diapositives.length;
 
         function afficher_diapositive(index) {
             diapositives.forEach(diapositive => diapositive.classList.remove('active'));
@@ -750,12 +750,12 @@ html {
         }
 
         function diapositive_suivante() {
-            diapositive_actuelle = (diapositive_actuelle + 1) % nombre_diapositives;
+            diapositive_actuelle = (diapositive_actuelle + 1) % titre_engbre_diapositives;
             afficher_diapositive(diapositive_actuelle);
         }
 
         // Avancement automatique du carrousel toutes les 5 secondes
-        if (nombre_diapositives > 1) {
+        if (titre_engbre_diapositives > 1) {
             setInterval(diapositive_suivante, 5000);
         }
 

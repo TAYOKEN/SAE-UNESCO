@@ -631,9 +631,9 @@ if ($article) {
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="glossaire.html">GLOSSAIRE</a></li>
-                    <li><a href="itineraires.html">ITINÉRAIRES</a></li>
-                    <li><a href="histoire.html">HISTOIRE</a></li>
+                    <li><a href="../glossaire.html">GLOSSAIRE</a></li>
+                    <li><a href="../itineraires.html">ITINÉRAIRES</a></li>
+                    <li><a href="../histoire.html">HISTOIRE</a></li>
                 </ul>
             </nav>
 
