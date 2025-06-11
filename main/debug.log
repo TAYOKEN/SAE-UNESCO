@@ -193,3 +193,140 @@
 [2025-06-08 17:35:35] [2025-06-08T15:35:35.801Z] Gestionnaires d'événements initialisés
 [2025-06-08 17:35:54] [2025-06-08T15:35:54.705Z] Gestionnaires d'événements initialisés
 [2025-06-08 17:35:54] [2025-06-08T15:35:54.705Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:14:52] [2025-06-11T19:14:52.304Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:14:52] [2025-06-11T19:14:52.303Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:15:12] [2025-06-11T19:15:12.592Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:15:12] [2025-06-11T19:15:12.593Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.053Z] Tentative d'ouverture du modal - Type: article, Item: 3
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.056Z] Chargement des anecdotes pour le select
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.054Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.057Z] Chargement des données pour l'item 3
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.058Z] Modal ouvert avec succès
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.057Z] loadItemData appelée - Type: article, ID: 3
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.058Z] Ajout de la classe show au modal
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.433Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.436Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:15:21] [2025-06-11T19:15:21.434Z] Données reçues pour loadItemData: | Erreur: {"id_a":3,"image_miniature":"https://cms.outtrip.fr/assets/outtrip/_1200x630_crop_center-center_82_none/Courir-sur-les-quais-de-Seine-%C3%A0-Paris.png?mtime=1628517472","nom":"Vivre sur une Peniche","date_creation":"2024-02-03 09:45:00","text":"Les peniches transformees en habitations offrent un mode de vie unique. Amarrees le long des quais, elles allient confort moderne et charme nautique. Leurs proprietaires ont choisi de vivre au rythme de la Seine.","tags":"lifestyle, habitat, originalite","id_ann":3,"id_u":3,"text_eng":"Barges converted into homes offer a unique way of life. Moored along the quays, they combine modern comfort and nautical charm. Their owners have chosen to live to the rhythm of the Seine.","tags_eng":"lifestyle, housing, originality","titre_eng":"Living on a Barge","utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-11 21:15:26] [2025-06-11T19:15:26.265Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:15:26] [2025-06-11T19:15:26.266Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:15:27] [2025-06-11T19:15:27.729Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:15:27] [2025-06-11T19:15:27.730Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:15:28] [2025-06-11T19:15:27.735Z] Chargement des données pour l'item 4
+[2025-06-11 21:15:28] [2025-06-11T19:15:27.738Z] Ajout de la classe show au modal
+[2025-06-11 21:15:28] [2025-06-11T19:15:27.736Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:15:28] [2025-06-11T19:15:27.739Z] Modal ouvert avec succès
+[2025-06-11 21:15:28] [2025-06-11T19:15:28.093Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:15:28] [2025-06-11T19:15:28.096Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:15:28] [2025-06-11T19:15:28.095Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:17:03] [2025-06-11T19:17:03.699Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:17:03] [2025-06-11T19:17:03.700Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:17:07] [2025-06-11T19:17:07.692Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.691Z] Tentative d'ouverture du modal - Type: article, Item: 1
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.697Z] Modal ouvert avec succès
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.694Z] Chargement des anecdotes pour le select
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.695Z] loadItemData appelée - Type: article, ID: 1
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.695Z] Chargement des données pour l'item 1
+[2025-06-11 21:17:08] [2025-06-11T19:17:07.697Z] Ajout de la classe show au modal
+[2025-06-11 21:17:08] [2025-06-11T19:17:08.116Z] Données reçues pour loadItemData: | Erreur: {"id_a":1,"image_miniature":"https://cms.outtrip.fr/assets/outtrip/_1200x630_crop_center-center_82_none/Courir-sur-les-quais-de-Seine-%C3%A0-Paris.png?mtime=1628517472","nom":"Les Bouquinistes Parisiens","date_creation":"2024-01-15 10:30:00","text":"Depuis 1859, les bouquinistes animent les quais de Seine avec leurs boites vertes. Ces marchands de livres anciens perpetuent une tradition unique au monde. Chaque jour, ils ouvrent leurs etals face a Notre-Dame, offrant aux passants des tresors litteraires.","tags":"histoire, culture, livres","id_ann":2,"id_u":1,"text_eng":"Since 1859, booksellers have animated the Seine quays with their green boxes. These antique book merchants perpetuate a unique tradition in the world. Every day, they open their stalls facing Notre-Dame, offering literary treasures to passersby.","tags_eng":"history, culture, books","titre_eng":"Parisian Booksellers","utilisateur_nom":"Marie Dubois","utilisateur_role":"Historienne"}
+[2025-06-11 21:17:08] [2025-06-11T19:17:08.115Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:17:08] [2025-06-11T19:17:08.118Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:17:14] [2025-06-11T19:17:14.424Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:17:14] [2025-06-11T19:17:14.425Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:17:31] [2025-06-11T19:17:31.436Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:17:31] [2025-06-11T19:17:31.437Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:17:43] [2025-06-11T19:17:43.665Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:17:43] [2025-06-11T19:17:43.665Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.306Z] Chargement des données pour l'item 4
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.304Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.308Z] Modal ouvert avec succès
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.306Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.303Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.308Z] Ajout de la classe show au modal
+[2025-06-11 21:44:49] [2025-06-11T19:44:49.875Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:44:50] [2025-06-11T19:44:49.878Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:44:50] [2025-06-11T19:44:49.876Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.753Z] Ajout de la classe show au modal
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.750Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.753Z] Modal ouvert avec succès
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.752Z] Chargement des données pour l'item 4
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.751Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:46:29] [2025-06-11T19:46:28.752Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:46:29] [2025-06-11T19:46:29.344Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:46:29] [2025-06-11T19:46:29.344Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:46:29] [2025-06-11T19:46:29.345Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:56:49] [2025-06-11T19:56:49.456Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:56:49] [2025-06-11T19:56:49.457Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.007Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.008Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.010Z] Chargement des données pour l'item 4
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.010Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.011Z] Ajout de la classe show au modal
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.012Z] Modal ouvert avec succès
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.345Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.346Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:56:52] [2025-06-11T19:56:52.347Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:57:35] [2025-06-11T19:57:35.290Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:57:35] [2025-06-11T19:57:35.291Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.334Z] Chargement des données pour l'item 4
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.336Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.331Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.330Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.340Z] Modal ouvert avec succès
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.339Z] Ajout de la classe show au modal
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.709Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.711Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:57:36] [2025-06-11T19:57:36.708Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.556Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.559Z] Ajout de la classe show au modal
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.558Z] Chargement des données pour l'item 10
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.557Z] Chargement des anecdotes pour le select
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.559Z] Modal ouvert avec succès
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.558Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-11 21:59:08] [2025-06-11T19:59:07.557Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:59:08] [2025-06-11T19:59:08.153Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:59:08] [2025-06-11T19:59:08.157Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:59:08] [2025-06-11T19:59:08.155Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"https://www.splendia.com/wp-content/uploads/2024/01/Quais-de-Seine1-1024x683.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":8,"id_u":3,"text_eng":"A walk along the Seine quays crosses through Paris history. Every stone, every parapet tells an anecdote. From Pont-Neuf to ×le Saint-Louis, these pedestrian paths offer a unique escape in the heart of the capital.","tags_eng":"tourism, heritage, discovery","titre_eng":"Walk on the Quays","utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-11 21:59:19] [2025-06-11T19:59:19.523Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:59:19] [2025-06-11T19:59:19.522Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:59:48] [2025-06-11T19:59:47.835Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 21:59:48] [2025-06-11T19:59:47.836Z] Gestionnaires d'événements initialisés
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.911Z] Tentative d'ouverture du modal - Type: anecdote, Item: 4
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.915Z] loadItemData appelée - Type: anecdote, ID: 4
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.914Z] Chargement des données pour l'item 4
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.912Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.916Z] Ajout de la classe show au modal
+[2025-06-11 21:59:50] [2025-06-11T19:59:49.916Z] Modal ouvert avec succès
+[2025-06-11 21:59:50] [2025-06-11T19:59:50.321Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 21:59:50] [2025-06-11T19:59:50.323Z] Données reçues pour loadItemData: | Erreur: {"id_ann":4,"nom":"Le pont des Arts et ses cadenas","text":"Le pont des Arts ‚tait c‚lŠbre pour ses milliers de cadenas d'amour accroch‚s par les couples. Bien que retir‚s en 2015 pour des raisons de s‚curit‚, cette tradition reste dans les m‚moires.","date_":"2008-01-01","tags":"Culture, Romance","text_eng":"The Pont des Arts was famous for its thousands of love padlocks attached by couples. Although removed in 2015 for safety reasons, this tradition remains in memory.","titre_eng":"Pont des Arts and its Padlocks","tags_eng":"Culture, Romance"}
+[2025-06-11 21:59:50] [2025-06-11T19:59:50.326Z] Données chargées avec succès dans le formulaire
+[2025-06-11 21:59:57] [2025-06-11T19:59:56.940Z] Clic sur bouton Nouvelle Anecdote
+[2025-06-11 21:59:57] [2025-06-11T19:59:56.940Z] Tentative d'ouverture du modal - Type: anecdote, Item: null
+[2025-06-11 21:59:57] [2025-06-11T19:59:56.941Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 21:59:57] [2025-06-11T19:59:56.942Z] Ajout de la classe show au modal
+[2025-06-11 21:59:57] [2025-06-11T19:59:56.942Z] Modal ouvert avec succès
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.942Z] loadItemData appelée - Type: article, ID: 10
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.943Z] Ajout de la classe show au modal
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.940Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.940Z] Tentative d'ouverture du modal - Type: article, Item: 10
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.942Z] Chargement des données pour l'item 10
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.943Z] Modal ouvert avec succès
+[2025-06-11 22:00:39] [2025-06-11T20:00:38.941Z] Chargement des anecdotes pour le select
+[2025-06-11 22:00:39] [2025-06-11T20:00:39.494Z] Données reçues pour loadItemData: | Erreur: {"id_a":10,"image_miniature":"https://www.splendia.com/wp-content/uploads/2024/01/Quais-de-Seine1-1024x683.jpg","nom":"Promenade sur les Quais","date_creation":"2024-03-28 17:30:00","text":"Une promenade sur les quais de Seine traverse l'histoire de Paris. Chaque pierre, chaque parapet raconte une anecdote. Du Pont-Neuf a l'ile Saint-Louis, ces chemins pietons offrent une evasion unique au coeur de la capitale.","tags":"tourisme, patrimoine, decouverte","id_ann":5,"id_u":3,"text_eng":"A walk along the Seine quays crosses through Paris history. Every stone, every parapet tells an anecdote. From Pont-Neuf to ×le Saint-Louis, these pedestrian paths offer a unique escape in the heart of the capital.","tags_eng":"tourism, heritage, discovery","titre_eng":"Walk on the Quays","utilisateur_nom":"Sophie Laurent","utilisateur_role":"Photographe"}
+[2025-06-11 22:00:39] [2025-06-11T20:00:39.493Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 22:00:39] [2025-06-11T20:00:39.496Z] Données chargées avec succès dans le formulaire
+[2025-06-11 22:01:30] [2025-06-11T20:01:30.219Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 22:01:30] [2025-06-11T20:01:30.220Z] Gestionnaires d'événements initialisés
+[2025-06-11 22:02:05] [2025-06-11T20:02:05.178Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 22:02:05] [2025-06-11T20:02:05.179Z] Gestionnaires d'événements initialisés
+[2025-06-11 22:02:06] [2025-06-11T20:02:06.703Z] Tentative d'ouverture du modal - Type: article, Item: 2
+[2025-06-11 22:02:06] [2025-06-11T20:02:06.709Z] loadItemData appelée - Type: article, ID: 2
+[2025-06-11 22:02:07] [2025-06-11T20:02:06.711Z] Modal ouvert avec succès
+[2025-06-11 22:02:07] [2025-06-11T20:02:06.704Z] Tous les éléments DOM trouvés, reset du formulaire
+[2025-06-11 22:02:07] [2025-06-11T20:02:06.707Z] Chargement des anecdotes pour le select
+[2025-06-11 22:02:07] [2025-06-11T20:02:06.708Z] Chargement des données pour l'item 2
+[2025-06-11 22:02:07] [2025-06-11T20:02:06.710Z] Ajout de la classe show au modal
+[2025-06-11 22:02:07] [2025-06-11T20:02:07.067Z] Réponse reçue pour loadItemData - Status: 200
+[2025-06-11 22:02:07] [2025-06-11T20:02:07.068Z] Données reçues pour loadItemData: | Erreur: {"id_a":2,"image_miniature":"https://www.lesbarres.com/blog/wp-content/uploads/2017/11/bar-peniche-quais-de-seine-paris.jpg","nom":"Notre-Dame vue des Quais","date_creation":"2024-01-20 14:15:00","text":"La cathedrale gothique domine majestueusement les quais depuis 850 ans. Sa silhouette se reflete dans les eaux calmes de la Seine. Les quais offrent la plus belle perspective pour admirer ce chef-d'oeuvre architectural.","tags":"architecture, histoire, patrimoine","id_ann":2,"id_u":4,"text_eng":"The Gothic cathedral has majestically dominated the quays for 850 years. Its silhouette is reflected in the calm waters of the Seine. The quays offer the most beautiful perspective to admire this architectural masterpiece.","tags_eng":"architecture, history, heritage","titre_eng":"Notre-Dame from the Quays","utilisateur_nom":"Jean Rousseau","utilisateur_role":"Architecte"}
+[2025-06-11 22:02:07] [2025-06-11T20:02:07.070Z] Données chargées avec succès dans le formulaire
+[2025-06-11 22:02:12] [2025-06-11T20:02:12.728Z] DOM chargé, initialisation des gestionnaires d'événements
+[2025-06-11 22:02:12] [2025-06-11T20:02:12.729Z] Gestionnaires d'événements initialisés

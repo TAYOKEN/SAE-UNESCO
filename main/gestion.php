@@ -38,31 +38,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 break;
 
             case 'create_article':
-                $stmt = $pdo->prepare("INSERT INTO articles (nom, text, tags, image_miniature, id_u, id_ann, date_creation) VALUES (?, ?, ?, ?, ?, ?, NOW())");
-                $result = $stmt->execute([
-                    $_POST['nom'],
-                    $_POST['text'],
-                    $_POST['tags'] ?: '',
-                    $_POST['image_miniature'] ?: '',
-                    $_POST['id_u'] ?: null,
-                    $_POST['id_ann'] ?: null
-                ]);
-                echo json_encode(['success' => $result]);
-                break;
+    $stmt = $pdo->prepare("INSERT INTO articles (nom, text, tags, image_miniature, id_u, id_ann, date_creation, titre_eng, text_eng, tags_eng) VALUES (?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?)");
+    $result = $stmt->execute([
+        $_POST['nom'],
+        $_POST['text'],
+        $_POST['tags'] ?: '',
+        $_POST['image_miniature'] ?: '',
+        $_POST['id_u'] ?: null,
+        $_POST['id_ann'] ?: null,
+        $_POST['titre_eng'] ?: '',
+        $_POST['text_eng'] ?: '',
+        $_POST['tags_eng'] ?: ''
+    ]);
+    echo json_encode(['success' => $result]);
+    break;
 
-            case 'update_article':
-                $stmt = $pdo->prepare("UPDATE articles SET nom = ?, text = ?, tags = ?, image_miniature = ?, id_u = ?, id_ann = ? WHERE id_a = ?");
-                $result = $stmt->execute([
-                    $_POST['nom'],
-                    $_POST['text'],
-                    $_POST['tags'] ?: '',
-                    $_POST['image_miniature'] ?: '',
-                    $_POST['id_u'] ?: null,
-                    $_POST['id_ann'] ?: null,
-                    $_POST['id']
-                ]);
-                echo json_encode(['success' => $result]);
-                break;
+case 'update_article':
+    $stmt = $pdo->prepare("UPDATE articles SET nom = ?, text = ?, tags = ?, image_miniature = ?, id_u = ?, id_ann = ?, titre_eng = ?, text_eng = ?, tags_eng = ? WHERE id_a = ?");
+    $result = $stmt->execute([
+        $_POST['nom'],
+        $_POST['text'],
+        $_POST['tags'] ?: '',
+        $_POST['image_miniature'] ?: '',
+        $_POST['id_u'] ?: null,
+        $_POST['id_ann'] ?: null,
+        $_POST['titre_eng'] ?: '',
+        $_POST['text_eng'] ?: '',
+        $_POST['tags_eng'] ?: '',
+        $_POST['id']
+    ]);
+    echo json_encode(['success' => $result]);
+    break;
 
             case 'delete_article':
                 $stmt = $pdo->prepare("DELETE FROM articles WHERE id_a = ?");
@@ -71,27 +77,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 break;
                 
             case 'create_anecdote':
-                $stmt = $pdo->prepare("INSERT INTO anecdote (nom, text, tags, date_) VALUES (?, ?, ?, ?)");
-                $result = $stmt->execute([
-                    $_POST['nom'],
-                    $_POST['text'],
-                    $_POST['tags'],
-                    $_POST['date'] ?: date('Y-m-d')
-                ]);
-                echo json_encode(['success' => $result]);
-                break;
+    $stmt = $pdo->prepare("INSERT INTO anecdote (nom, text, tags, date_, titre_eng, text_eng, tags_eng) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $result = $stmt->execute([
+        $_POST['nom'],
+        $_POST['text'],
+        $_POST['tags'],
+        $_POST['date'] ?: date('Y-m-d'),
+        $_POST['titre_eng'] ?: '',
+        $_POST['text_eng'] ?: '',
+        $_POST['tags_eng'] ?: ''
+    ]);
+    echo json_encode(['success' => $result]);
+    break;
 
-            case 'update_anecdote':
-                $stmt = $pdo->prepare("UPDATE anecdote SET nom = ?, text = ?, tags = ?, date_ = ? WHERE id_ann = ?");
-                $result = $stmt->execute([
-                    $_POST['nom'],
-                    $_POST['text'],
-                    $_POST['tags'],
-                    $_POST['date'],
-                    $_POST['id']
-                ]);
-                echo json_encode(['success' => $result]);
-                break;
+case 'update_anecdote':
+    $stmt = $pdo->prepare("UPDATE anecdote SET nom = ?, text = ?, tags = ?, date_ = ?, titre_eng = ?, text_eng = ?, tags_eng = ? WHERE id_ann = ?");
+    $result = $stmt->execute([
+        $_POST['nom'],
+        $_POST['text'],
+        $_POST['tags'],
+        $_POST['date'],
+        $_POST['titre_eng'] ?: '',
+        $_POST['text_eng'] ?: '',
+        $_POST['tags_eng'] ?: '',
+        $_POST['id']
+    ]);
 
             case 'get_anecdotes_list':
                 $stmt = $pdo->prepare("SELECT id_ann, nom FROM anecdote ORDER BY nom");
@@ -290,7 +300,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                         </div>
                     <?php else: ?>
                         <?php foreach ($articles as $article): ?>
+                            
                             <div class="item fade-in">
+                                <?php if (!empty($article['titre_eng']) && !empty($article['text_eng'])): ?>
+                                <div class="item-meta">🇬🇧 Traduction disponible</div>
+                            <?php endif; ?> 
+                            <?php if (empty($article['titre_eng']) || empty($article['text_eng'])): ?>
+                                <div class="item-meta">🇬🇧 Traduction non-disponible ⚠️</div>
+                            <?php endif; ?> 
                                 <div class="item-title"><?= htmlspecialchars($article['nom']) ?></div>
                                 <div class="item-meta">
                                     Créé le: <?= date('d/m/Y', strtotime($article['date_creation'])) ?>
@@ -385,6 +402,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                         <label class="form-label" for="image_miniature">Image miniature</label>
                         <input type="text" class="form-input" id="image_miniature" placeholder="URL de l'image">
                     </div>
+                <div class="form-group">
+    <h3 style="margin-top: 20px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">🇬🇧 Version Anglaise </h3>
+</div>
+
+<div class="form-group">
+    <label class="form-label" for="titre_eng">Titre en anglais</label>
+    <input type="text" class="form-input" id="titre_eng" placeholder="English title">
+</div>
+
+<div class="form-group">
+    <label class="form-label" for="text_eng">Contenu en anglais</label>
+    <textarea class="form-input form-textarea" id="text_eng" placeholder="English content"></textarea>
+</div>
+
+<div class="form-group">
+    <label class="form-label" for="tags_eng">Tags en anglais</label>
+    <input type="text" class="form-input" id="tags_eng" placeholder="Ex: #history #culture #architecture">
+</div>
                     
                     <div class="form-group">
                         <label class="form-label" for="utilisateur">Utilisateur</label>
@@ -400,7 +435,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     <div class="form-group">
                         <label class="form-label" for="anecdote_liee">Anecdote liée</label>
                         <select class="form-select" id="anecdote_liee">
-                            <option value="">Sélectionner une anecdote (optionnel)</option>
+                            <option value="">Sélectionner une anecdote</option>
                         </select>
                     </div>
                 </div>
@@ -455,7 +490,7 @@ function openModal(type, item = null) {
         const articleFields = document.getElementById('articleFields');
         const modalTitle = document.getElementById('modalTitle');
         
-        // Vérifier que tous les éléments existent
+        // Vérifier que tous les éléments existent (POUR LE DEBUG)
         if (!modal) {
             logError('ERREUR: Élément modal non trouvé');
             return;
@@ -475,11 +510,10 @@ function openModal(type, item = null) {
         
         logError('Tous les éléments DOM trouvés, reset du formulaire');
         
-        // Reset form
         form.reset();
         currentEditItem = item;
         
-        // Show/hide article-specific fields
+        // Modals par rapport à l'elem qu'on modif
         if (type === 'article') {
             modalTitle.textContent = item ? 'Modifier l\'article' : 'Nouvel Article';
             articleFields.style.display = 'block';
@@ -492,7 +526,6 @@ function openModal(type, item = null) {
         
         document.getElementById('itemType').value = type;
         
-        // If editing, load item data
         if (item) {
             logError(`Chargement des données pour l'item ${item}`);
             loadItemData(type, item);
@@ -534,7 +567,10 @@ function loadItemData(type, id) {
             document.getElementById('itemId').value = type === 'article' ? data.id_a : data.id_ann;
             document.getElementById('nom').value = data.nom || '';
             document.getElementById('text').value = data.text || '';
-            document.getElementById('tags').value = data.tags || '';
+            document.getElementById('tags').value = data.tags || '';            
+            document.getElementById('titre_eng').value = data.titre_eng || '';
+            document.getElementById('text_eng').value = data.text_eng || '';
+            document.getElementById('tags_eng').value = data.tags_eng || '';
             
             if (type === 'article') {
                 document.getElementById('image_miniature').value = data.image_miniature || '';
@@ -558,7 +594,6 @@ function loadItemData(type, id) {
         alert('Erreur lors du chargement des données: ' + error.message);
     });
 }
-
 document.getElementById('contentForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -574,10 +609,8 @@ document.getElementById('contentForm').addEventListener('submit', function(e) {
         return;
     }
     
-    // Utiliser URLSearchParams pour un envoi plus propre
     const params = new URLSearchParams();
     
-    // Déterminer l'action
     const action = id ? `update_${type}` : `create_${type}`;
     params.append('action', action);
     
@@ -585,6 +618,11 @@ document.getElementById('contentForm').addEventListener('submit', function(e) {
     params.append('nom', nom);
     params.append('text', text);
     params.append('tags', document.getElementById('tags').value.trim());
+    
+    // Ajouter les champs anglais
+    params.append('titre_eng', document.getElementById('titre_eng').value.trim());
+    params.append('text_eng', document.getElementById('text_eng').value.trim());
+    params.append('tags_eng', document.getElementById('tags_eng').value.trim());
     
     if (type === 'article') {
         params.append('image_miniature', document.getElementById('image_miniature').value.trim());
@@ -621,6 +659,7 @@ document.getElementById('contentForm').addEventListener('submit', function(e) {
         alert('Erreur lors de la sauvegarde: ' + error.message);
     });
 });
+
 
 // Edit item
 function editItem(type, id) {
@@ -671,7 +710,7 @@ function loadAnecdotesForSelect() {
     .then(anecdotes => {
         const select = document.getElementById('anecdote_liee');
         if (select) {
-            select.innerHTML = '<option value="">Sélectionner une anecdote (optionnel)</option>';
+            select.innerHTML = '<option value="">Sélectionner une anecdote </option>';
             anecdotes.forEach(anecdote => {
                 select.innerHTML += `<option value="${anecdote.id_ann}">${anecdote.nom}</option>`;
             });
