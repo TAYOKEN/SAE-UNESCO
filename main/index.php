@@ -153,6 +153,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     height: 80px;
+    margin-bottom: -80px;
 }
 
 .header-container {
@@ -233,12 +234,9 @@ body {
     color: #EA5C0D;
 }
 
-/* Hero Section avec carrousel */
 .hero {
-    position: relative;
     height: 500px;
     overflow: hidden;
-    margin-top: 80px;
     margin-bottom: 0;
 }
 
